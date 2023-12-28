@@ -58,7 +58,7 @@ skills:
       - name: C++
         description: ''
         percent: 60
-        icon: computer
+        icon: code
         icon_pack: fab
       - name: Data Science
         description: ''
