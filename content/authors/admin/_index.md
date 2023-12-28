@@ -1,6 +1,6 @@
 ---
 # Display name
-title: Saiyang Zhang 张赛旸
+title: 张赛旸 Saiyang Zhang 
 
 # Name pronunciation (optional)
 name_pronunciation: Sai Yang Zhang
