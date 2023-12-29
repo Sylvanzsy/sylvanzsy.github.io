@@ -69,8 +69,8 @@ sections:
       buttons:
         - name: All
           tag: '*'
-        - name: Deep Learning
-          tag: Deep Learning
+        - name: Dark Matter
+          tag: Dark Matter
         - name: Other
           tag: Demo
     design:
@@ -108,7 +108,7 @@ sections:
   - block: collection
     id: talks
     content:
-      title: Recent & Upcoming Talks
+      title:Presentation & Talks
       filters:
         folders:
           - event
