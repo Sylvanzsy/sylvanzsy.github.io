@@ -108,7 +108,7 @@ sections:
   - block: collection
     id: talks
     content:
-      title:Presentation & Talks
+      title: Presentations
       filters:
         folders:
           - event
