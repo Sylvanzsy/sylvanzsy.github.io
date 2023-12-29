@@ -1,6 +1,7 @@
 ---
 # Display name
-title: Saiyang Zhang (张赛旸)
+title: Saiyang Zhang 
+  (张赛旸)
 
 # Name pronunciation (optional)
 name_pronunciation: 
@@ -59,7 +60,7 @@ skills:
         description: ''
         percent: 60
         icon: code
-        icon_pack: fab
+        icon_pack: fas
       - name: Data Science
         description: ''
         percent: 100
@@ -87,7 +88,7 @@ skills:
       - name: Football 
         description: ''
         percent: 80
-        icon: soccer
+        icon: futbol
         icon_pack: fas
 
 # Social/Academic Networking
@@ -118,9 +119,9 @@ social:
 highlight_name: true
 ---
 
-Growing up in Beijing, I developed a deep appreciation for science and for the mystreies of the universe. After completing my high school studies, I moved to US to start my undergraduate studies in Colgate University, to persue further education in Astronomy/Physics and Mathematics.
+Growing up in Beijing, I developed a deep appreciation for science and for the mystreies of the universe. After completing my high school studies, I moved to US to start my undergraduate studies in Colgate University, to persue further education in Astronomy/Physics and Applied Mathematics.
 
-Currently, I'm a doctoral student specializing in theorietical and computational astrophysics. My research focuses on dark matter, early universe and the cosmological evolution. I'm interested in studying different dark matter candidates like Primordial Black Holes(PBHs) and Self-interacting Dark Matter(SIDM), and their astrophysical effects on the early universe, using both theoretical and computational methods.
+Currently, I'm a doctoral candidate specializing in theorietical and computational astrophysics. My research focuses on dark matter, early universe and the cosmological evolution. I'm interested in studying different dark matter candidates like Primordial Black Holes(PBHs), Weakly Interacting Massive Particles(WIMP) and Self-interacting Dark Matter(SIDM), and their astrophysical effects on the early universe objects like Population III stars and Dark Stars, using both theoretical and computational methods.
 
-Beyond my academic persuits, I have a profound love for nature and sports. I enjoying down-hill skiing, and play football(⚽️!) frequently. In the future, I hope to travel to the Europe, skiing down the Alps and watching top tier football games. So far, I have conquered one 14er in Colorado, and there are more to go in the following years.
+Beyond my academic persuits, I have a profound love for nature and sports. I enjoying down-hill skiing, mountain hiking and play football(⚽️!) frequently. In the future, I hope to travel to the Europe, skiing down the Alps and watching top tier football games. So far, I have conquered one 14er in Colorado, and there are more to go in the following years.
 {style="text-align: justify;"}
