@@ -20,7 +20,7 @@ main:
     url: '#featured'
     weight: 50
   - name: CV
-    url: uploads/resume.pdf
+    url: upload/Saiyang_CV.pdf
     weight: 60
   - name: Contact
     url: '#contact'
