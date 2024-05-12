@@ -71,8 +71,8 @@ sections:
           tag: '*'
         - name: Dark Matter
           tag: Dark Matter
-        - name: Other
-          tag: Demo
+        - name: Early Universe
+          tag: Early Universe
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '1'
