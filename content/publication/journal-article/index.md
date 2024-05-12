@@ -8,7 +8,7 @@ date: "2023-12-28"
 doi: "10.1093/mnras/stad3986"
 
 # Schedule page publish date (NOT publication's date).
-publishDate: "2024-2-2T00:00:00Z"
+publishDate: "2024-02-02T00:00:00Z"
 
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
