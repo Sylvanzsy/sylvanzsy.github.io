@@ -2,7 +2,7 @@
 title: Primordial Black Hole Project
 summary: How does primordial black hole influence the evolution of the Universe?
 tags:
-  - Primordial Black Hole
+  - Dark Matter
   - Early Universe
 
 # Optional external URL for project (replaces project detail page).
