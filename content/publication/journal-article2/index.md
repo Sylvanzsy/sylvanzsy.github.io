@@ -4,7 +4,7 @@ authors:
 - Boyuan Liu
 - admin
 - Volker Bromm
-date: "2023-11-2T00:00:00Z"
+date: "2023-8-2T00:00:00Z"
 doi: "10.1093/mnras/stac1472"
 
 # Schedule page publish date (NOT publication's date).
