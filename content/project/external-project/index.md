@@ -2,7 +2,7 @@
 title: Dark Star
 summary: How we detect dark stars in the early universe?
 tags:
-  - WIMP Dark Matter
+  -  Dark Matter
 date: "2023-12-28T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
