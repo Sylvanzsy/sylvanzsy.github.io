@@ -22,7 +22,7 @@ role: PhD Candidate
 
 # Organizations/Affiliations to show in About widget
 organizations:
-  - name: Weinberg Theory Group, University of Texas, Austin
+  - name: Cosmic Frontier Center, Weinberg Institute, University of Texas, Austin
     url: https://www.utexas.edu/
 
 # Short bio (displayed in user profile at end of posts)
