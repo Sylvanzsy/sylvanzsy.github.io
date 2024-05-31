@@ -62,10 +62,4 @@ projects: []
 # slides: example
 ---
 
-{{% callout note %}}
-Click the *Cite* button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-{{% /callout %}}
-
-{{% callout note %}}
-Create your slides in Markdown - click the *Slides* button to check out the example.
-{{% /callout %}}
+We use cosmological hydrodynamic zoom-in simulations and semi-analytical models to study the effects of primordial black holes (PBHs) on first star formation. Our models self-consistently combine two competing effects: initial (isocurvature) perturbations induced by PBHs and BH accretion feedback. Focusing on PBHs with masses $\sim 30 M_{\odot}$, we find that the standard picture of first star formation in molecular-cooling minihaloes is not changed by PBHs, as the simulated star-forming gas clouds in the central parsec are very similar to those in the $\rm \Lambda CDM$ case when PBHs make up $f_{PBH}\sim 10^{-4}-0.1$ of dark matter. With a dynamical friction timescale of $\sim 2-10\ \rm Myr$ when the central gas density reaches $10^{5} cm^{-3}$, it is also unlikely that PBHs can sink into star-forming discs and affect the evolution of protostars, although they may interact with the stars during the main-sequence stage. At larger scales, PBHs tend to shift star formation to more massive haloes, and accelerate structure formation. The latter effect is stronger in regions with higher initial overdensities. For $f_{\rm PBH}\sim 10^{-4}-0.01$ (allowed by observational constraints), the collapsed mass fraction of haloes hosting Population~III stars is similar (within a factor of $\sim2$ at $z< 30$) to that in $\rm \Lambda CDM$, implying that the impact of stellar-mass PBHs on the cosmic star formation history at $z> 10$ is small. We also find that the Lyman-Werner photons from PBH accretion in atomic-cooling haloes may facilitate the formation of direct-collapse BHs.
