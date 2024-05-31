@@ -43,7 +43,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
 image:
-  caption: 'Changes to the lower halo mass limit for first star formation with respect to different PBH mass'
+  caption: 'Cosmic Webb with PBHs centered around $10^6$ solar mass vs. $\Lambda$CDM simulation '
   focal_point: ""
   preview_only: false
 
@@ -62,10 +62,4 @@ projects: []
 # slides: example
 ---
 
-{{% callout note %}}
-Click the *Cite* button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-{{% /callout %}}
-
-{{% callout note %}}
-Create your slides in Markdown - click the *Slides* button to check out the example.
-{{% /callout %}}
+We examine the effects of massive primordial black holes (PBHs) on cosmic structure formation, employing both a semi-analytical approach and cosmological simulations. Our simulations incorporate PBHs with a monochromatic mass distribution centered around $10^6 \ \rm M_{\odot}$, constituting a fraction of $10^{-2}$ to $10^{-4}$ of the dark matter (DM) in the universe, with the remainder being collision-less particle dark matter (PDM). Additionally, we conduct a $\Lambda$CDM simulation for comparative analysis with runs that include PBHs. At smaller scales, halos containing PBHs exhibit similar density and velocity dispersion profiles to those without PBHs. Conversely, at larger scales, PBHs can expedite the formation of massive halos and reside at their centers due to the `seed effect'. To analyze the relative distribution of PBH host halos compared to non-PBH halos, we apply nearest-neighbor (NN) statistics. Our results suggest that PBH host halos, through gravitational influence, significantly impact the structure formation process, compared to the $\Lambda$CDM case, by attracting and engulfing nearby newly-formed minihalos. Should PBHs constitute a fraction of DM significantly larger than $\sim$$10^{-3}$, almost all newly-formed halos will be absorbed by PBH-seeded halos. Consequently, our simulations predict a bimodal feature in the halo mass function, with most of the massive halos containing at least one PBH at their core and the rest being less massive non-PBH halos.
