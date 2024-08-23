@@ -1,9 +1,9 @@
 ---
-title: "Effects of stellar-mass primordial black holes on first star formation"
+title: "How do Primordial Black Holes change the Halo Mass Function and Structure?"
 authors:
-- Boyuan Liu
 - admin
 - Volker Bromm
+- Boyuan Liu
 date: "2024-05-21T00:00:00Z"
 doi: "10.48550/arXiv.2405.11381"
 
