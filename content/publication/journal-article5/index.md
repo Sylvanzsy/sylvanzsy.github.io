@@ -7,7 +7,7 @@ authors:
 - Junehyoung Jeon
 - Micheal Boylan-Kolchin
 - Florian Kuhnel
-date: "2025-03-22"
+date: "2025-03-22T00:00:00Z"
 doi: "10.48550/arXiv.2503.17585"
 
 # Schedule page publish date (NOT publication's date).
