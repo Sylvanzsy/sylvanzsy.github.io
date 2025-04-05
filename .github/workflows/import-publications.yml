@@ -51,7 +51,7 @@ jobs:
           branch: hugoblox-import-publications
           delete-branch: true
       - name: Log converted data
-          run: cat content/publication/*.md | grep 'year'
+        run: cat content/publication/*.md | grep 'year'
 
       - name: Check outputs
         if: ${{ steps.cpr.outputs.pull-request-number }}
