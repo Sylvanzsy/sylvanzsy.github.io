@@ -34,7 +34,7 @@ featured: false
 # links:
 # - name: ""
 #   url: ""
-url_pdf: 'https://arxiv.org/pdf/2503.17585'
+url_pdf: https://arxiv.org/pdf/2503.17585
 url_code: ''
 url_dataset: ''
 url_poster: ''
