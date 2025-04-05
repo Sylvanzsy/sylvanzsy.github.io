@@ -5,7 +5,7 @@ authors:
 - Volker Bromm
 - Boyuan Liu
 - Junehyoung Jeon
-- Micheal Boylan-Kolchin
+- Micheal Boylan Kolchin
 - Florian Kuhnel
 date: "2025-03-22T00:00:00Z"
 doi: "10.48550/arXiv.2503.17585"
