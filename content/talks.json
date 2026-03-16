@@ -1,0 +1,227 @@
+[
+  {
+    "id": "i1",
+    "sortKey": "202410",
+    "date": "Oct 2024",
+    "title": "TEPAPP Seminar",
+    "venue": "University of California",
+    "location": "Los Angeles, CA",
+    "type": "Invited Talk"
+  },
+  {
+    "id": "i2",
+    "sortKey": "202407",
+    "date": "Jul 2024",
+    "title": "Seventeenth Marcel Grossmann Meeting",
+    "venue": "University of Bologna",
+    "location": "Bologna, Italy",
+    "type": "Invited Talk"
+  },
+  {
+    "id": "i3",
+    "sortKey": "202404",
+    "date": "Apr 2024",
+    "title": "Physics Seminar",
+    "venue": "Colgate University",
+    "location": "Hamilton, NY",
+    "type": "Invited Talk"
+  },
+  {
+    "id": "c1",
+    "sortKey": "202512",
+    "date": "Dec 2025",
+    "title": "Group Meeting Talk",
+    "venue": "Peking University",
+    "location": "Beijing, China",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c2",
+    "sortKey": "202512",
+    "date": "Dec 2025",
+    "title": "Texas Symposium on Relativistic Astrophysics",
+    "venue": "Arizona State University",
+    "location": "Tempe, AZ",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c3",
+    "sortKey": "202510",
+    "date": "Oct 2025",
+    "title": "Extragalactic Discussion Group",
+    "venue": "University of Hawaiʻi",
+    "location": "Mānoa, HI",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c4",
+    "sortKey": "202509",
+    "date": "Sep 2025",
+    "title": "Thunch Talk",
+    "venue": "Princeton University",
+    "location": "Princeton, NJ",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c5",
+    "sortKey": "202509",
+    "date": "Sep 2025",
+    "title": "Galaxy Lunch",
+    "venue": "Yale University",
+    "location": "New Haven, CT",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c6",
+    "sortKey": "202509",
+    "date": "Sep 2025",
+    "title": "PACMAN Seminar",
+    "venue": "Flatiron Institute",
+    "location": "New York City, NY",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c7",
+    "sortKey": "202509",
+    "date": "Sep 2025",
+    "title": "Astrophysics Seminar",
+    "venue": "Columbia University",
+    "location": "New York City, NY",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c8",
+    "sortKey": "202508",
+    "date": "Aug 2025",
+    "title": "Santa Cruz Galaxy Workshop (video)",
+    "venue": "UC Santa Cruz",
+    "location": "Santa Cruz, CA",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c9",
+    "sortKey": "202504",
+    "date": "Apr 2025",
+    "title": "ITC Luncheon Talk (video)",
+    "venue": "Harvard University",
+    "location": "Boston, MA",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c10",
+    "sortKey": "202504",
+    "date": "Apr 2025",
+    "title": "MAT Seminar",
+    "venue": "MIT Kavli Institute",
+    "location": "Boston, MA",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c11",
+    "sortKey": "202504",
+    "date": "Apr 2025",
+    "title": "Group Meeting Talk",
+    "venue": "Carnegie Observatories",
+    "location": "Pasadena, CA",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c12",
+    "sortKey": "202412",
+    "date": "Dec 2024",
+    "title": "Group Meeting Talk",
+    "venue": "Tsinghua University",
+    "location": "Beijing, China",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c13",
+    "sortKey": "202411",
+    "date": "Nov 2024",
+    "title": "CFC-CCA Workshop",
+    "venue": "University of Texas",
+    "location": "Austin, TX",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c14",
+    "sortKey": "202410",
+    "date": "Oct 2024",
+    "title": "Astrophysics Seminar",
+    "venue": "UC Riverside",
+    "location": "Riverside, CA",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c15",
+    "sortKey": "202204",
+    "date": "Apr 2022",
+    "title": "APS April Meeting",
+    "venue": "American Physical Society",
+    "location": "New York City, NY",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c16",
+    "sortKey": "201610",
+    "date": "Oct 2016",
+    "title": "Keck Northeast Astronomy Consortium",
+    "venue": "Wesleyan University",
+    "location": "Middletown, CT",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "p1",
+    "sortKey": "202505",
+    "date": "May 2025",
+    "title": "CFC2025",
+    "venue": "University of Texas",
+    "location": "Austin, TX",
+    "type": "Poster"
+  },
+  {
+    "id": "p2",
+    "sortKey": "202503",
+    "date": "Mar 2025",
+    "title": "Dark Matter 2025",
+    "venue": "UCLA",
+    "location": "Los Angeles, CA",
+    "type": "Poster"
+  },
+  {
+    "id": "p3",
+    "sortKey": "202405",
+    "date": "May 2024",
+    "title": "First Stars VII",
+    "venue": "Flatiron Institute",
+    "location": "New York, NY",
+    "type": "Poster"
+  },
+  {
+    "id": "p4",
+    "sortKey": "202312",
+    "date": "Dec 2023",
+    "title": "Texas Symposium on Relativistic Astrophysics",
+    "venue": "Shanghai Jiao Tong University",
+    "location": "Shanghai, China",
+    "type": "Poster"
+  },
+  {
+    "id": "p5",
+    "sortKey": "201906",
+    "date": "Jun 2019",
+    "title": "Symposium in Honor of the Legacy of Vera Rubin",
+    "venue": "Georgetown University",
+    "location": "Washington, DC",
+    "type": "Poster"
+  },
+  {
+    "id": "p6",
+    "sortKey": "201903",
+    "date": "Mar 2019",
+    "title": "Rochester Symposium for Physics Students",
+    "venue": "University of Rochester",
+    "location": "Rochester, NY",
+    "type": "Poster"
+  }
+]

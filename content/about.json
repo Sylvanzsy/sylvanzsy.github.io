@@ -1,0 +1,86 @@
+{
+  "bio": "Growing up in Beijing, I developed a deep appreciation for science and the mysteries of the universe. After completing high school, I moved to the US to pursue undergraduate studies at Colgate University in Astronomy/Physics and Applied Mathematics.\n\nCurrently, I'm a 6th-year doctoral candidate at the University of Texas at Austin, advised by Volker Bromm, specializing in theoretical and computational astrophysics. My research focuses on dark matter, the early universe, and cosmological evolution — studying dark matter candidates like Primordial Black Holes (PBHs), Weakly Interacting Massive Particles (WIMPs), Warm Dark Matter (WDM), and Self-interacting Dark Matter (SIDM), and their astrophysical effects on early universe objects like Population III stars and Supermassive Black Holes.\n\nBeyond traditional astrophysics, I am increasingly interested in the intersection of machine learning and scientific discovery — particularly in applying large language models (LLMs) and simulation-based inference to accelerate research in cosmology and dark matter detection, as well as studying AI systems as a new domain of scientific inquiry.\n\nBeyond my academic pursuits, I have a profound love for nature and sports. I enjoy downhill skiing, mountain hiking, football (⚽), and tennis. I have conquered four 14ers in Colorado, and there are more to go.",
+  "photo": "/photos/avatar.jpg",
+  "orcid": "0000-0003-1541-177X",
+  "metrics": {
+    "hIndex": 11,
+    "citations": 366,
+    "firstAuthorPapers": 7,
+    "source": "NASA/ADS"
+  },
+  "interests": [
+    { "label": "Dark Matter (PBHs, WIMPs, SIDM)", "icon": "atom" },
+    { "label": "Early Universe & Pop III Stars", "icon": "sparkles" },
+    { "label": "Supermassive Black Holes", "icon": "globe" },
+    { "label": "Large-Scale Structure", "icon": "globe" },
+    { "label": "High-Performance Computing", "icon": "cpu" },
+    { "label": "Machine Learning", "icon": "brain" }
+  ],
+  "education": [
+    {
+      "degree": "Ph.D. in Physics",
+      "institution": "University of Texas at Austin",
+      "department": "Cosmic Frontier Center · Weinberg Institute",
+      "advisor": "Volker Bromm",
+      "thesis": "Imprints of the Primordial Black Holes over Cosmic History",
+      "year": "Aug 2020 – Aug 2026 (exp.)",
+      "status": "Candidate"
+    },
+    {
+      "degree": "M.A. in Physics",
+      "institution": "University of Texas at Austin",
+      "department": "Cosmic Frontier Center · Weinberg Institute",
+      "advisor": "Katherine Freese",
+      "thesis": "Detecting Supermassive Dark Stars with the Roman Space Telescope",
+      "year": "Aug 2020 – Dec 2024",
+      "status": "Graduated"
+    },
+    {
+      "degree": "B.A. in Astronomy/Physics & Applied Mathematics",
+      "institution": "Colgate University",
+      "department": "Magna cum laude",
+      "advisor": "Cosmin Ilie",
+      "thesis": "",
+      "year": "2015 – 2019",
+      "status": "Graduated"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Dissertation Writing Fellowship",
+      "year": "2025",
+      "amount": "$24,000",
+      "institution": "UT Austin"
+    },
+    {
+      "title": "Robert S. Davis and Lyell P. Davis Scholarship Fund",
+      "year": "2024",
+      "amount": "$1,000",
+      "institution": "UT Austin"
+    },
+    {
+      "title": "Graduate School Professional Development Award",
+      "year": "2024 / 2025 / 2026",
+      "amount": "$2,250",
+      "institution": "UT Austin"
+    },
+    {
+      "title": "APS DAP Student/Postdoc Travel Grant",
+      "year": "2022",
+      "amount": "$600",
+      "institution": "American Physical Society"
+    },
+    {
+      "title": "Joseph C. Amato & Anthony F. Aveni Award (Excellence in Thesis)",
+      "year": "2019",
+      "amount": "",
+      "institution": "Colgate University"
+    }
+  ],
+  "skills": {
+    "languages": ["Python", "C/C++", "R", "MATLAB", "Mathematica", "Bash", "Fortran"],
+    "packages": ["PyTorch", "scikit-learn", "Pandas", "TLUSTY", "GIZMO", "MUSIC", "ROCKSTAR", "YT", "COLOSSUS", "PANDEIA"],
+    "tools": ["VS Code", "LaTeX", "Git/GitHub", "Jupyter Lab"],
+    "training": ["HPC", "Bayesian Analysis", "Scientific ML", "Numerical Linear Algebra"]
+  }
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "id": "proj1",
+    "title": "GravThermal-SIDM",
+    "shortDescription": "A GPU-accelerated N-body code to simulate the gravothermal evolution of self-interacting dark matter halos, enabling parameter-space sweeps on supercomputers.",
+    "image": "/images/projects/sidm.jpg",
+    "tags": ["Dark Matter", "HPC", "CUDA", "Python"],
+    "category": "Dark Matter",
+    "github": "https://github.com/szhangphys/gravthermal-sidm",
+    "demo": null,
+    "highlights": ["10× speedup over CPU baseline", "Used on TACC Frontera", "Open source"]
+  },
+  {
+    "id": "proj2",
+    "title": "PBH-Constraints",
+    "shortDescription": "A unified Bayesian framework combining HSC microlensing, EROS-2, and 21-cm global-signal data to constrain the PBH dark matter fraction across the full mass range.",
+    "image": "/images/projects/pbh.jpg",
+    "tags": ["Dark Matter", "Bayesian Statistics", "Python"],
+    "category": "Dark Matter",
+    "github": "https://github.com/szhangphys/pbh-constraints",
+    "demo": null,
+    "highlights": ["Multi-messenger constraints", "Interactive likelihood explorer"]
+  },
+  {
+    "id": "proj3",
+    "title": "DarkStar-3D",
+    "shortDescription": "Three-dimensional radiation-hydrodynamics simulations of Population III protostellar clouds with dark matter annihilation heating, built on top of the FLASH AMR framework.",
+    "image": "/images/projects/darkstar.jpg",
+    "tags": ["Early Universe", "Pop III", "Hydrodynamics", "Fortran"],
+    "category": "Early Universe",
+    "github": null,
+    "demo": null,
+    "highlights": ["AMR grid with FLASH4", "Runs on TACC Stampede3", "Collaboration with UT Bromm group"]
+  },
+  {
+    "id": "proj4",
+    "title": "CMB-Net",
+    "shortDescription": "A convolutional neural network pipeline for fast parameter inference from CMB temperature and polarization maps, trained on CLASS-generated power spectra.",
+    "image": "/images/projects/cmbnet.jpg",
+    "tags": ["Cosmology", "Machine Learning", "PyTorch", "Python"],
+    "category": "Cosmology",
+    "github": "https://github.com/szhangphys/cmb-net",
+    "demo": null,
+    "highlights": ["100× faster than MCMC", "Tested on Planck data", "PyTorch + HEALPix"]
+  },
+  {
+    "id": "proj5",
+    "title": "WIMP-Direct",
+    "shortDescription": "Analytical and numerical toolkit for computing WIMP direct detection rates including nuclear form factors, annual modulation, and detector response functions.",
+    "image": "/images/projects/wimp.jpg",
+    "tags": ["Dark Matter", "Python", "Particle Physics"],
+    "category": "Dark Matter",
+    "github": "https://github.com/szhangphys/wimp-direct",
+    "demo": null,
+    "highlights": ["Covers 1 GeV–100 TeV WIMP masses", "Xenon1T / LZ ready"]
+  }
+]
