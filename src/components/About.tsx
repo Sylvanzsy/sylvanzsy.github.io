@@ -187,9 +187,9 @@ export default function About() {
             variants={stagger}
             className="flex flex-col gap-5"
           >
-            {/* Bio */}
+            {/* Bio — English from JSON, Chinese from translations */}
             <motion.div variants={fadeUp} className="flex flex-col gap-3">
-              {aboutData.bio.split('\n\n').map((para, i) => (
+              {(lang === 'zh' ? t.about.bioZh : aboutData.bio).split('\n\n').map((para, i) => (
                 <p key={i} className="text-[var(--muted)] leading-relaxed text-base">{para}</p>
               ))}
             </motion.div>
@@ -202,16 +202,17 @@ export default function About() {
               <div className="flex flex-wrap gap-2">
                 {aboutData.interests.map((interest) => {
                   const href = INTEREST_LINKS[interest.label]
+                  const displayLabel = t.about.interestLabels[interest.label] || interest.label
                   const cls = 'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-[var(--color-accent)]/10 text-[var(--color-accent)] border border-[var(--color-accent)]/20 hover:bg-[var(--color-accent)]/20 transition-colors'
                   return href ? (
                     <Link key={interest.label} href={href} className={cls}>
                       <span className="opacity-70">{iconMap[interest.icon]}</span>
-                      {interest.label}
+                      {displayLabel}
                     </Link>
                   ) : (
                     <span key={interest.label} className={cls}>
                       <span className="opacity-70">{iconMap[interest.icon]}</span>
-                      {interest.label}
+                      {displayLabel}
                     </span>
                   )
                 })}
@@ -226,13 +227,15 @@ export default function About() {
               <div className="flex flex-col gap-4">
                 {aboutData.education.map((edu) => {
                   const statusLabel = edu.status === 'Candidate' ? t.about.statusCandidate : t.about.statusGraduated
+                  const displayDegree = t.about.degreeLabels[edu.degree] || edu.degree
+                  const displayDepartment = t.about.departmentLabels[edu.department] || edu.department
                   return (
                     <div key={edu.degree} className="flex items-start gap-3">
                       <div className="mt-0.5 w-7 h-7 rounded-full bg-[var(--color-accent)]/15 border border-[var(--color-accent)]/25 flex items-center justify-center text-[var(--color-accent)] shrink-0">
                         <GraduationIcon />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <p className="text-sm font-semibold text-[var(--foreground)]">{edu.degree}</p>
+                        <p className="text-sm font-semibold text-[var(--foreground)]">{displayDegree}</p>
                         <p className="text-xs text-[var(--color-accent)]">
                           {edu.institution === 'University of Texas at Austin' ? (
                             <a href="https://www.utexas.edu/" target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-2">
@@ -243,7 +246,7 @@ export default function About() {
                               {edu.institution}
                             </a>
                           ) : edu.institution}
-                          {' · '}{edu.department}
+                          {' · '}{displayDepartment}
                         </p>
                         {edu.advisor && (
                           <p className="text-xs text-[var(--muted)]">{t.about.advisor} {edu.advisor} · {edu.year}</p>

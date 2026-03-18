@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import StarField from './StarField'
 import { useLang } from '@/context/LanguageContext'
+import { T } from '@/lib/translations'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
@@ -82,6 +83,7 @@ const BTN_OUTLINE = `${BTN_BASE} border-[var(--card-border)] bg-[var(--card)]/50
 export default function Hero() {
   const { lang } = useLang()
   const isZh = lang === 'zh'
+  const t = T[lang]
 
   return (
     <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
@@ -141,40 +143,27 @@ export default function Hero() {
           </a>
         </motion.p>
 
-        {/* CITA Fellowship announcement */}
+        {/* Dual Fellowship announcement */}
         <motion.div variants={item} className="mb-8">
           <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent)]/[0.08] text-sm font-medium text-[var(--foreground)] shadow-[0_0_20px_rgba(76,201,240,0.12)]">
             <span className="text-base">🎉</span>
             <span>
-              {isZh ? (
-                <>
-                  即将就任{' '}
-                  <a href="https://www.cita.utoronto.ca/" target="_blank" rel="noopener noreferrer"
-                    className="text-[var(--color-accent)] font-semibold hover:underline underline-offset-2">
-                    CITA研究员
-                  </a>
-                  {' '}·{' '}
-                  <a href="https://www.cita.utoronto.ca/" target="_blank" rel="noopener noreferrer"
-                    className="hover:underline underline-offset-2">
-                    加拿大理论天体物理研究所
-                  </a>
-                  {' '}· 2026年秋
-                </>
-              ) : (
-                <>
-                  Incoming{' '}
-                  <a href="https://www.cita.utoronto.ca/" target="_blank" rel="noopener noreferrer"
-                    className="text-[var(--color-accent)] font-semibold hover:underline underline-offset-2">
-                    CITA Fellow
-                  </a>
-                  {' '}·{' '}
-                  <a href="https://www.cita.utoronto.ca/" target="_blank" rel="noopener noreferrer"
-                    className="hover:underline underline-offset-2">
-                    Canadian Institute for Theoretical Astrophysics
-                  </a>
-                  {' '}· Fall 2026
-                </>
-              )}
+              {t.hero.citaPrefix}{' '}
+              <a href="https://www.cita.utoronto.ca/" target="_blank" rel="noopener noreferrer"
+                className="text-[var(--color-accent)] font-semibold hover:underline underline-offset-2">
+                {t.hero.citaFellow}
+              </a>
+              {' '}{t.hero.citaAnd}{' '}
+              <a href="https://www.artsci.utoronto.ca/" target="_blank" rel="noopener noreferrer"
+                className="text-[var(--color-accent)] font-semibold hover:underline underline-offset-2">
+                {t.hero.citaPostdoc}
+              </a>
+              {' '}·{' '}
+              <a href="https://www.utoronto.ca/" target="_blank" rel="noopener noreferrer"
+                className="hover:underline underline-offset-2">
+                {t.hero.citaInstitute}
+              </a>
+              {' '}· {t.hero.citaSuffix}
             </span>
           </span>
         </motion.div>
