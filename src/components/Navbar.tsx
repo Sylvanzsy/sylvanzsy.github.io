@@ -3,13 +3,15 @@
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useLang } from '@/context/LanguageContext'
+import { T } from '@/lib/translations'
 
-const NAV_LINKS = [
-  { label: 'About', href: '#about' },
-  { label: 'Research', href: '#research' },
-  { label: 'Publications', href: '#publications' },
-  { label: 'Talks', href: '#talks' },
-  { label: 'Contact', href: '#contact' },
+const NAV_KEYS = [
+  { key: 'about' as const, href: '#about' },
+  { key: 'research' as const, href: '#research' },
+  { key: 'publications' as const, href: '#publications' },
+  { key: 'talks' as const, href: '#talks' },
+  { key: 'contact' as const, href: '#contact' },
 ]
 
 function SunIcon() {
@@ -61,6 +63,8 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
+  const { lang, toggleLang } = useLang()
+  const t = T[lang]
 
   useEffect(() => {
     setMounted(true)
@@ -95,10 +99,10 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <ul className="hidden lg:flex items-center gap-0.5">
-          {NAV_LINKS.map((link) => (
+          {NAV_KEYS.map((link) => (
             <li key={link.href}>
               <a href={link.href} className="px-3 py-1.5 rounded-md text-xs text-[var(--muted)] hover:text-[var(--color-accent)] hover:bg-[var(--color-accent-glow)] transition-all duration-200 font-medium">
-                {link.label}
+                {t.nav[link.key]}
               </a>
             </li>
           ))}
@@ -113,8 +117,19 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[var(--color-accent)]/40 text-[var(--color-accent)] text-xs font-semibold hover:bg-[var(--color-accent)] hover:text-[#020818] transition-all duration-200"
           >
-            <DocumentIcon />CV
+            <DocumentIcon />{t.nav.cv}
           </a>
+
+          {/* Language toggle */}
+          {mounted && (
+            <button
+              onClick={toggleLang}
+              className="hidden sm:inline-flex items-center px-2.5 py-1 rounded-full border border-[var(--card-border)] text-[var(--muted)] text-xs font-semibold hover:text-[var(--color-accent)] hover:border-[var(--color-accent)]/50 transition-all duration-200"
+              aria-label="Toggle language"
+            >
+              {lang === 'en' ? '中文' : 'EN'}
+            </button>
+          )}
 
           {/* Theme toggle */}
           <button
@@ -147,14 +162,14 @@ export default function Navbar() {
             className="lg:hidden overflow-hidden bg-[var(--card)]/95 backdrop-blur-xl border-b border-[var(--card-border)]"
           >
             <ul className="px-4 py-3 flex flex-col gap-1">
-              {NAV_LINKS.map((link) => (
+              {NAV_KEYS.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
                     className="block px-3 py-2 rounded-md text-sm text-[var(--muted)] hover:text-[var(--color-accent)] hover:bg-[var(--color-accent-glow)] transition-all"
                   >
-                    {link.label}
+                    {t.nav[link.key]}
                   </a>
                 </li>
               ))}
@@ -165,8 +180,16 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                   className="block px-3 py-2 rounded-md text-sm font-semibold text-[var(--color-accent)] hover:bg-[var(--color-accent-glow)] transition-all"
                 >
-                  📄 Download CV
+                  📄 {lang === 'zh' ? '下载简历' : 'Download CV'}
                 </a>
+              </li>
+              <li>
+                <button
+                  onClick={() => { toggleLang(); setMobileOpen(false) }}
+                  className="w-full text-left px-3 py-2 rounded-md text-sm text-[var(--muted)] hover:text-[var(--color-accent)] hover:bg-[var(--color-accent-glow)] transition-all"
+                >
+                  🌐 {lang === 'en' ? '切换至中文' : 'Switch to English'}
+                </button>
               </li>
             </ul>
           </motion.div>

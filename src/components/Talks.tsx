@@ -2,40 +2,12 @@
 
 import { motion } from 'framer-motion'
 import talksData from '../../content/talks.json'
+import { useLang } from '@/context/LanguageContext'
+import { T } from '@/lib/translations'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
 type Talk = typeof talksData[number]
-
-const GROUPS: { type: Talk['type']; label: string; number: string; accent: string; dot: string }[] = [
-  {
-    type: 'Invited Talk',
-    label: 'Invited Talks',
-    number: '06a',
-    accent: 'text-[#f72585]',
-    dot: 'bg-[#f72585] shadow-[0_0_8px_rgba(247,37,133,0.5)]',
-  },
-  {
-    type: 'Contributed Talk',
-    label: 'Contributed Talks & Seminars',
-    number: '06b',
-    accent: 'text-[#4cc9f0]',
-    dot: 'bg-[#4cc9f0] shadow-[0_0_8px_rgba(76,201,240,0.5)]',
-  },
-  {
-    type: 'Poster',
-    label: 'Posters',
-    number: '06c',
-    accent: 'text-[#c77dff]',
-    dot: 'bg-[#c77dff] shadow-[0_0_8px_rgba(199,125,255,0.4)]',
-  },
-]
-
-const TYPE_BADGE: Record<string, string> = {
-  'Invited Talk': 'text-[#f72585] bg-[#f72585]/10 border-[#f72585]/30',
-  'Contributed Talk': 'text-[#4cc9f0] bg-[#4cc9f0]/10 border-[#4cc9f0]/30',
-  Poster: 'text-[#c77dff] bg-[#7b2fbe]/10 border-[#7b2fbe]/30',
-}
 
 function MapPinIcon() {
   return (
@@ -45,7 +17,7 @@ function MapPinIcon() {
   )
 }
 
-function TalkRow({ talk, index, dotClass }: { talk: Talk; index: number; dotClass: string }) {
+function TalkRow({ talk, index, dotClass, badge }: { talk: Talk; index: number; dotClass: string; badge: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -76,15 +48,47 @@ function TalkRow({ talk, index, dotClass }: { talk: Talk; index: number; dotClas
       </div>
 
       {/* Badge */}
-      <span className={`hidden sm:inline-flex shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded-full border ${TYPE_BADGE[talk.type]}`}>
-        {talk.type === 'Invited Talk' ? '● Invited' : talk.type === 'Poster' ? '◆ Poster' : '○ Seminar'}
+      <span className={`hidden sm:inline-flex shrink-0 text-[10px] font-semibold px-2 py-0.5 rounded-full border ${
+        talk.type === 'Invited Talk'
+          ? 'text-[#f72585] bg-[#f72585]/10 border-[#f72585]/30'
+          : talk.type === 'Poster'
+          ? 'text-[#c77dff] bg-[#7b2fbe]/10 border-[#7b2fbe]/30'
+          : 'text-[#4cc9f0] bg-[#4cc9f0]/10 border-[#4cc9f0]/30'
+      }`}>
+        {badge}
       </span>
     </motion.div>
   )
 }
 
 export default function Talks() {
-  // Sort each group by sortKey descending (newest first)
+  const { lang } = useLang()
+  const t = T[lang]
+
+  const GROUPS = [
+    {
+      type: 'Invited Talk' as Talk['type'],
+      label: t.talks.groups.invitedTalk,
+      accent: 'text-[#f72585]',
+      dot: 'bg-[#f72585] shadow-[0_0_8px_rgba(247,37,133,0.5)]',
+      badge: t.talks.badges.invited,
+    },
+    {
+      type: 'Contributed Talk' as Talk['type'],
+      label: t.talks.groups.contributedTalk,
+      accent: 'text-[#4cc9f0]',
+      dot: 'bg-[#4cc9f0] shadow-[0_0_8px_rgba(76,201,240,0.5)]',
+      badge: t.talks.badges.seminar,
+    },
+    {
+      type: 'Poster' as Talk['type'],
+      label: t.talks.groups.poster,
+      accent: 'text-[#c77dff]',
+      dot: 'bg-[#c77dff] shadow-[0_0_8px_rgba(199,125,255,0.4)]',
+      badge: t.talks.badges.poster,
+    },
+  ]
+
   const sorted = [...talksData].sort((a, b) => b.sortKey.localeCompare(a.sortKey))
 
   return (
@@ -100,12 +104,12 @@ export default function Talks() {
           transition={{ duration: 0.6 }}
           className="mb-14 text-center"
         >
-          <p className="text-[var(--color-accent)] text-xs font-semibold tracking-[0.25em] uppercase mb-3">06 / Talks</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)]">Talks &amp; Presentations</h2>
+          <p className="text-[var(--color-accent)] text-xs font-semibold tracking-[0.25em] uppercase mb-3">{t.talks.sectionNum}</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)]">{t.talks.title}</h2>
           <p className="mt-4 text-xs text-[var(--muted)]">
-            <span className="text-[#f72585]">●</span> Invited &nbsp;·&nbsp;
-            <span className="text-[#4cc9f0]">○</span> Contributed/Seminar &nbsp;·&nbsp;
-            <span className="text-[#c77dff]">◆</span> Poster
+            <span className="text-[#f72585]">●</span> {t.talks.legend.invited} &nbsp;·&nbsp;
+            <span className="text-[#4cc9f0]">○</span> {t.talks.legend.seminar} &nbsp;·&nbsp;
+            <span className="text-[#c77dff]">◆</span> {t.talks.legend.poster}
           </p>
         </motion.div>
 
@@ -134,7 +138,7 @@ export default function Talks() {
                 {/* Rows inside a card */}
                 <div className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] px-5 divide-y-0">
                   {talks.map((talk, i) => (
-                    <TalkRow key={talk.id} talk={talk} index={i} dotClass={group.dot} />
+                    <TalkRow key={talk.id} talk={talk} index={i} dotClass={group.dot} badge={group.badge} />
                   ))}
                 </div>
               </motion.div>

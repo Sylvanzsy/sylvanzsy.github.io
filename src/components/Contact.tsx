@@ -1,6 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useLang } from '@/context/LanguageContext'
+import { T } from '@/lib/translations'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
@@ -16,14 +18,6 @@ function MapPinIcon() {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-    </svg>
-  )
-}
-
-function ClockIcon() {
-  return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
     </svg>
   )
 }
@@ -52,48 +46,51 @@ function AdsIcon() {
   )
 }
 
-const CONTACT_ITEMS = [
-  { icon: <MailIcon />, label: 'Email', value: 'szhangphys@utexas.edu', href: 'mailto:szhangphys@utexas.edu' },
-  { icon: <MapPinIcon />, label: 'Office', value: '9.206 PMA, 2515 Speedway, Austin TX 78712', href: 'https://maps.google.com/?q=2515+Speedway+Austin+TX+78712' },
-  { icon: <ClockIcon />, label: 'Office Hours', value: 'Monday 10:00–13:00  ·  Wednesday 09:00–10:00', href: null },
-]
-
-const SOCIAL_LINKS = [
-  { icon: <GithubIcon />, label: 'GitHub', href: 'https://github.com/Sylvanzsy?tab=repositories' },
-  { icon: <AdsIcon />, label: 'NASA/ADS Publications', href: 'https://ui.adsabs.harvard.edu/public-libraries/rn8ayZ1WR1CJV6DeDhc2Ng' },
-  { icon: <OrcidIcon />, label: 'ORCID: 0000-0003-1541-177X', href: 'https://orcid.org/0000-0003-1541-177X' },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
-      </svg>
-    ),
-    label: 'Google Scholar',
-    href: 'https://scholar.google.com/citations?user=_MmI5KUAAAAJ&hl=en',
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="1"/>
-        <path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5z"/>
-        <path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5z"/>
-      </svg>
-    ),
-    label: 'INSPIRE-HEP',
-    href: 'https://inspirehep.net/authors/2847731?ui-citation-summary=true',
-  },
-  {
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-      </svg>
-    ),
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/saiyang-zhang-7597b910b/',
-  },
-]
-
 export default function Contact() {
+  const { lang } = useLang()
+  const t = T[lang]
+
+  // FIX 2: Office Hours row completely removed
+  const CONTACT_ITEMS = [
+    { icon: <MailIcon />, label: t.contact.labelEmail, value: 'szhangphys@utexas.edu', href: 'mailto:szhangphys@utexas.edu' },
+    { icon: <MapPinIcon />, label: t.contact.labelOffice, value: '9.206 PMA, 2515 Speedway, Austin TX 78712', href: 'https://maps.google.com/?q=2515+Speedway+Austin+TX+78712' },
+  ]
+
+  const SOCIAL_LINKS = [
+    { icon: <GithubIcon />, label: t.contact.findOnline === '在线主页' ? 'GitHub' : 'GitHub', href: 'https://github.com/Sylvanzsy?tab=repositories' },
+    { icon: <AdsIcon />, label: 'NASA/ADS Publications', href: 'https://ui.adsabs.harvard.edu/public-libraries/rn8ayZ1WR1CJV6DeDhc2Ng' },
+    { icon: <OrcidIcon />, label: 'ORCID: 0000-0003-1541-177X', href: 'https://orcid.org/0000-0003-1541-177X' },
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+      ),
+      label: t.contact.googleScholar,
+      href: 'https://scholar.google.com/citations?user=_MmI5KUAAAAJ&hl=en',
+    },
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="1"/>
+          <path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5z"/>
+          <path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5z"/>
+        </svg>
+      ),
+      label: 'INSPIRE-HEP',
+      href: 'https://inspirehep.net/authors/2847731?ui-citation-summary=true',
+    },
+    {
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      ),
+      label: 'LinkedIn',
+      href: 'https://www.linkedin.com/in/saiyang-zhang-7597b910b/',
+    },
+  ]
+
   return (
     <section id="contact" className="relative py-28 px-4 pb-40">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent to-[var(--color-accent)]/30" />
@@ -108,10 +105,10 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
-          <p className="text-[var(--color-accent)] text-xs font-semibold tracking-[0.25em] uppercase mb-3">07 / Contact</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)]">Get in Touch</h2>
+          <p className="text-[var(--color-accent)] text-xs font-semibold tracking-[0.25em] uppercase mb-3">{t.contact.sectionNum}</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)]">{t.contact.title}</h2>
           <p className="mt-4 text-[var(--muted)] max-w-md mx-auto text-sm leading-relaxed">
-            Happy to discuss science, collaborations, or opportunities. Reach out anytime.
+            {t.contact.subtitle}
           </p>
         </motion.div>
 
@@ -125,7 +122,7 @@ export default function Contact() {
             className="rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-6 flex flex-col gap-5"
           >
             <h3 className="text-sm font-semibold text-[var(--foreground)] flex items-center gap-2">
-              <span className="w-4 h-0.5 bg-[var(--color-accent)] rounded" />Contact Info
+              <span className="w-4 h-0.5 bg-[var(--color-accent)] rounded" />{t.contact.contactInfo}
             </h3>
             {CONTACT_ITEMS.map((item) => (
               <div key={item.label} className="flex items-start gap-4">
@@ -156,7 +153,7 @@ export default function Contact() {
             className="rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-6 flex flex-col gap-5"
           >
             <h3 className="text-sm font-semibold text-[var(--foreground)] flex items-center gap-2">
-              <span className="w-4 h-0.5 bg-[var(--color-accent)] rounded" />Find Me Online
+              <span className="w-4 h-0.5 bg-[var(--color-accent)] rounded" />{t.contact.findOnline}
             </h3>
             <div className="flex flex-col gap-3">
               {SOCIAL_LINKS.map((link) => (
@@ -172,7 +169,7 @@ export default function Contact() {
             </div>
             <a href="mailto:szhangphys@utexas.edu"
               className="mt-auto inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[var(--color-accent)] text-[#020818] font-semibold text-sm shadow-[0_0_20px_var(--color-accent-glow)] hover:shadow-[0_0_35px_var(--color-accent-glow)] hover:scale-[1.02] transition-all duration-200">
-              <MailIcon />Send an Email
+              <MailIcon />{t.contact.sendEmail}
             </a>
           </motion.div>
         </div>
@@ -186,8 +183,8 @@ export default function Contact() {
         transition={{ duration: 0.8, delay: 0.4 }}
         className="mt-20 text-center text-xs text-[var(--muted)]/60"
       >
-        <p>Built with Next.js · Tailwind CSS · Framer Motion</p>
-        <p className="mt-1">© 2026 Saiyang Zhang · All rights reserved</p>
+        <p>{t.contact.footer1}</p>
+        <p className="mt-1">{t.contact.footer2}</p>
       </motion.div>
     </section>
   )

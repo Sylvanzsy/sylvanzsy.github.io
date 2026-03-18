@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import publicationsData from '../../content/publications.json'
 import atelsData from '../../content/atels.json'
+import { useLang } from '@/context/LanguageContext'
+import { T } from '@/lib/translations'
 
 type Publication = typeof publicationsData[number]
 type ATel = typeof atelsData[number]
@@ -69,20 +71,15 @@ const CATEGORY_COLOR: Record<string, string> = {
   'Dark Matter': 'text-[#4cc9f0] bg-[#4cc9f0]/10 border-[#4cc9f0]/25',
   'Early Universe': 'text-[#f72585] bg-[#f72585]/10 border-[#f72585]/25',
   Cosmology: 'text-[#c77dff] bg-[#7b2fbe]/10 border-[#7b2fbe]/25',
-  Other: 'text-[var(--muted)] bg-[var(--card-border)] border-[var(--card-border)]',
+  // FIX 1c: Other category — proper contrast in light mode
+  Other: 'text-slate-600 bg-slate-100 border-slate-200 dark:text-slate-300 dark:bg-slate-700/50 dark:border-slate-600/50',
 }
 
-const TYPE_FILTERS = ['All', 'Peer-Reviewed', 'Preprints', 'First Author'] as const
-
-const SORT_OPTIONS: { key: SortKey; label: string }[] = [
-  { key: 'year-desc', label: 'Year ↓' },
-  { key: 'year-asc', label: 'Year ↑' },
-  { key: 'journal-az', label: 'Journal A–Z' },
-]
+const TYPE_FILTER_KEYS = ['All', 'Peer-Reviewed', 'Preprints', 'First Author'] as const
 
 const ALL_YEARS = [...new Set(publicationsData.map((p) => p.year))].sort((a, b) => b - a)
 
-function PublicationEntry({ pub, index }: { pub: Publication; index: number }) {
+function PublicationEntry({ pub, index, t }: { pub: Publication; index: number; t: typeof T['en'] }) {
   return (
     <motion.div
       layout
@@ -103,12 +100,13 @@ function PublicationEntry({ pub, index }: { pub: Publication; index: number }) {
         <div className="flex items-start gap-3 mb-2 flex-wrap">
           {pub.firstAuthor && (
             <span className="inline-flex items-center gap-1 shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[var(--color-accent)] text-[#020818] shadow-[0_0_8px_var(--color-accent-glow)]">
-              <StarIcon /> First Author
+              <StarIcon /> {t.publications.badgeFirstAuthor}
             </span>
           )}
           {pub.isPreprint && (
-            <span className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border border-amber-500/40 text-amber-400 bg-amber-500/10">
-              Preprint
+            // FIX 1c: Preprint badge — proper contrast in light mode
+            <span className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full border border-amber-500/40 text-amber-700 bg-amber-50 dark:text-amber-400 dark:bg-amber-500/10">
+              {t.publications.badgePreprint}
             </span>
           )}
           <span className={`shrink-0 text-xs px-2.5 py-0.5 rounded-full border font-medium ${CATEGORY_COLOR[pub.category] || CATEGORY_COLOR['Other']}`}>
@@ -139,10 +137,12 @@ function PublicationEntry({ pub, index }: { pub: Publication; index: number }) {
           {` (${pub.year})`}
         </p>
 
-        {/* Tags */}
+        {/* FIX 1b: Tags — proper contrast in both modes */}
         <div className="flex flex-wrap gap-1.5 mb-3">
           {pub.tags.map((tag) => (
-            <span key={tag} className="text-xs px-2 py-0.5 rounded-md bg-[var(--color-space-700)]/50 text-[var(--muted)] font-mono">{tag}</span>
+            <span key={tag} className="text-xs px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 dark:bg-slate-700/70 dark:text-slate-200 font-mono border border-slate-200 dark:border-slate-600/50">
+              {tag}
+            </span>
           ))}
         </div>
 
@@ -193,6 +193,21 @@ export default function Publications() {
   const [sort, setSort] = useState<SortKey>('year-desc')
   const [yearFilter, setYearFilter] = useState<number | 'all'>('all')
   const [atelOpen, setAtelOpen] = useState(false)
+  const { lang } = useLang()
+  const t = T[lang]
+
+  const TYPE_FILTER_LABELS: Record<string, string> = {
+    'All': t.publications.filterAll,
+    'Peer-Reviewed': t.publications.filterPeerReviewed,
+    'Preprints': t.publications.filterPreprints,
+    'First Author': t.publications.filterFirstAuthor,
+  }
+
+  const SORT_OPTIONS: { key: SortKey; label: string }[] = [
+    { key: 'year-desc', label: t.publications.sortYearDesc },
+    { key: 'year-asc', label: t.publications.sortYearAsc },
+    { key: 'journal-az', label: t.publications.sortJournalAZ },
+  ]
 
   const filtered = [...publicationsData]
     .filter((p) => {
@@ -209,7 +224,7 @@ export default function Publications() {
       return 0
     })
 
-  const btnBase = 'px-3 py-1.5 rounded-full text-xs font-medium border transition-all duration-200'
+  const btnBase = 'px-3 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 whitespace-nowrap shrink-0'
   const btnActive = `${btnBase} bg-[var(--color-accent)] text-[#020818] border-[var(--color-accent)] shadow-[0_0_14px_var(--color-accent-glow)]`
   const btnInactive = `${btnBase} border-[var(--card-border)] text-[var(--muted)] hover:border-[var(--color-accent)]/50 hover:text-[var(--color-accent)]`
 
@@ -226,8 +241,8 @@ export default function Publications() {
           transition={{ duration: 0.6 }}
           className="mb-10 text-center"
         >
-          <p className="text-[var(--color-accent)] text-xs font-semibold tracking-[0.25em] uppercase mb-3">05 / Publications</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)]">Publications</h2>
+          <p className="text-[var(--color-accent)] text-xs font-semibold tracking-[0.25em] uppercase mb-3">{t.publications.sectionNum}</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)]">{t.publications.title}</h2>
           <p className="mt-3 text-xs text-[var(--muted)]">
             h-index: 11 · 366 total citations · 7 first-author papers —{' '}
             <a href="https://ui.adsabs.harvard.edu/public-libraries/rn8ayZ1WR1CJV6DeDhc2Ng" target="_blank" rel="noopener noreferrer"
@@ -239,12 +254,12 @@ export default function Publications() {
             <a href="https://ui.adsabs.harvard.edu/public-libraries/rn8ayZ1WR1CJV6DeDhc2Ng" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--color-accent)]/40 text-[var(--color-accent)] text-xs font-semibold hover:bg-[var(--color-accent)]/10 transition-all">
               <AdsIcon />
-              Full Library on NASA/ADS
+              {t.publications.fullLibrary}
             </a>
           </div>
         </motion.div>
 
-        {/* Control bar */}
+        {/* FIX 5d: Mobile-scrollable control bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -252,47 +267,55 @@ export default function Publications() {
           className="flex flex-col gap-3 mb-6"
         >
           {/* Sort */}
-          <div className="flex flex-wrap justify-center items-center gap-2">
-            <span className="text-xs font-semibold text-[var(--muted)] mr-1">Sort:</span>
-            {SORT_OPTIONS.map((opt) => (
-              <button key={opt.key} onClick={() => setSort(opt.key)}
-                className={sort === opt.key ? btnActive : btnInactive}>
-                {opt.label}
-              </button>
-            ))}
+          <div className="overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex gap-2 items-center w-max sm:w-auto sm:flex-wrap sm:justify-center">
+              <span className="text-xs font-semibold text-[var(--muted)] mr-1 shrink-0">{t.publications.sortLabel}</span>
+              {SORT_OPTIONS.map((opt) => (
+                <button key={opt.key} onClick={() => setSort(opt.key)}
+                  className={sort === opt.key ? btnActive : btnInactive}>
+                  {opt.label}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Type filter */}
-          <div className="flex flex-wrap justify-center gap-2">
-            {TYPE_FILTERS.map((f) => (
-              <button key={f} onClick={() => setTypeFilter(f)}
-                className={typeFilter === f ? btnActive : btnInactive}>
-                {f}
-              </button>
-            ))}
+          <div className="overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex gap-2 w-max sm:w-auto sm:flex-wrap sm:justify-center">
+              {TYPE_FILTER_KEYS.map((f) => (
+                <button key={f} onClick={() => setTypeFilter(f)}
+                  className={typeFilter === f ? btnActive : btnInactive}>
+                  {TYPE_FILTER_LABELS[f]}
+                </button>
+              ))}
+            </div>
           </div>
 
           {/* Year filter */}
-          <div className="flex flex-wrap justify-center items-center gap-2">
-            <span className="text-xs font-semibold text-[var(--muted)] mr-1">Year:</span>
-            <button onClick={() => setYearFilter('all')}
-              className={yearFilter === 'all' ? btnActive : btnInactive}>
-              All
-            </button>
-            {ALL_YEARS.map((y) => (
-              <button key={y} onClick={() => setYearFilter(yearFilter === y ? 'all' : y)}
-                className={yearFilter === y ? btnActive : btnInactive}>
-                {y}
+          <div className="overflow-x-auto scrollbar-hide -mx-4 px-4 sm:mx-0 sm:px-0">
+            <div className="flex gap-2 items-center w-max sm:w-auto sm:flex-wrap sm:justify-center">
+              <span className="text-xs font-semibold text-[var(--muted)] mr-1 shrink-0">{t.publications.yearLabel}</span>
+              <button onClick={() => setYearFilter('all')}
+                className={yearFilter === 'all' ? btnActive : btnInactive}>
+                {t.publications.yearAll}
               </button>
-            ))}
+              {ALL_YEARS.map((y) => (
+                <button key={y} onClick={() => setYearFilter(yearFilter === y ? 'all' : y)}
+                  className={yearFilter === y ? btnActive : btnInactive}>
+                  {y}
+                </button>
+              ))}
+            </div>
           </div>
         </motion.div>
 
         {/* Result count */}
         <p className="text-center text-xs text-[var(--muted)] mb-4">
-          Showing {filtered.length} of {publicationsData.length} publications
+          {lang === 'zh'
+            ? `显示 ${filtered.length} / ${publicationsData.length} 篇`
+            : `Showing ${filtered.length} of ${publicationsData.length} publications`}
           {yearFilter !== 'all' && ` · ${yearFilter}`}
-          {typeFilter !== 'All' && ` · ${typeFilter}`}
+          {typeFilter !== 'All' && ` · ${TYPE_FILTER_LABELS[typeFilter]}`}
         </p>
 
         {/* List */}
@@ -300,7 +323,7 @@ export default function Publications() {
           <AnimatePresence mode="popLayout">
             {filtered.length > 0 ? (
               filtered.map((pub, i) => (
-                <PublicationEntry key={pub.id} pub={pub} index={i} />
+                <PublicationEntry key={pub.id} pub={pub} index={i} t={t} />
               ))
             ) : (
               <motion.p
@@ -310,7 +333,7 @@ export default function Publications() {
                 exit={{ opacity: 0 }}
                 className="py-14 text-center text-sm text-[var(--muted)]"
               >
-                No publications match the selected filters.
+                {lang === 'zh' ? '没有符合筛选条件的论文。' : 'No publications match the selected filters.'}
               </motion.p>
             )}
           </AnimatePresence>
@@ -326,7 +349,7 @@ export default function Publications() {
         >
           <a href="https://ui.adsabs.harvard.edu/public-libraries/rn8ayZ1WR1CJV6DeDhc2Ng" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm text-[var(--muted)] hover:text-[var(--color-accent)] transition-colors">
-            View full list on NASA/ADS
+            {t.publications.viewFull}
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
             </svg>

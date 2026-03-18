@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import StarField from './StarField'
+import { useLang } from '@/context/LanguageContext'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
@@ -79,6 +80,9 @@ const BTN_BASE = 'inline-flex items-center gap-2 px-4 py-2 rounded-full border t
 const BTN_OUTLINE = `${BTN_BASE} border-[var(--card-border)] bg-[var(--card)]/50 text-[var(--foreground)] hover:border-[var(--color-accent)]/50 hover:text-[var(--color-accent)] hover:bg-[var(--color-accent-glow)] backdrop-blur-sm`
 
 export default function Hero() {
+  const { lang } = useLang()
+  const isZh = lang === 'zh'
+
   return (
     <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       <StarField />
@@ -93,19 +97,19 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl"
+        className="relative z-10 flex flex-col items-center text-center px-4 max-w-4xl w-full"
       >
         {/* PhD badge */}
         <motion.div variants={item}>
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10 text-[var(--color-accent)] text-xs font-medium tracking-widest uppercase mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse" />
-            PhD Candidate · UT Austin · Expected Aug 2026
+            {isZh ? '博士候选人 · UT Austin · 预计2026年8月' : 'PhD Candidate · UT Austin · Expected Aug 2026'}
           </span>
         </motion.div>
 
         {/* Name */}
         <motion.div variants={item} className="mb-4">
-          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight leading-none">
+          <h1 className="text-4xl sm:text-7xl font-bold tracking-tight leading-none">
             <span className="bg-gradient-to-r from-slate-900 via-[#4cc9f0] to-purple-700 dark:from-white dark:via-[#4cc9f0] dark:to-[#9d4edd] bg-clip-text text-transparent">
               Saiyang Zhang
             </span>
@@ -117,13 +121,16 @@ export default function Hero() {
 
         {/* Title */}
         <motion.p variants={item} className="text-base sm:text-lg text-[var(--muted)] max-w-xl leading-relaxed mb-1">
-          PhD Candidate in{' '}
-          <span className="text-[var(--foreground)] font-medium">Theoretical &amp; Computational Astrophysics</span>
+          {isZh ? (
+            <>理论与计算天体物理学博士候选人</>
+          ) : (
+            <>PhD Candidate in{' '}<span className="text-[var(--foreground)] font-medium">Theoretical &amp; Computational Astrophysics</span></>
+          )}
         </motion.p>
 
-        {/* Institution — FIX 5 */}
+        {/* Institution */}
         <motion.p variants={item} className="text-sm sm:text-base text-[var(--muted)] mb-5">
-          Cosmic Frontier Center · Weinberg Institute ·{' '}
+          {isZh ? '宇宙前沿中心 · 温伯格研究所 · ' : 'Cosmic Frontier Center · Weinberg Institute · '}
           <a
             href="https://www.utexas.edu/"
             target="_blank"
@@ -134,27 +141,45 @@ export default function Hero() {
           </a>
         </motion.p>
 
-        {/* FIX 6: CITA Fellowship announcement */}
+        {/* CITA Fellowship announcement */}
         <motion.div variants={item} className="mb-8">
           <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent)]/[0.08] text-sm font-medium text-[var(--foreground)] shadow-[0_0_20px_rgba(76,201,240,0.12)]">
             <span className="text-base">🎉</span>
             <span>
-              Incoming{' '}
-              <a href="https://www.cita.utoronto.ca/" target="_blank" rel="noopener noreferrer"
-                className="text-[var(--color-accent)] font-semibold hover:underline underline-offset-2">
-                CITA Fellow
-              </a>
-              {' '}·{' '}
-              <a href="https://www.cita.utoronto.ca/" target="_blank" rel="noopener noreferrer"
-                className="hover:underline underline-offset-2">
-                Canadian Institute for Theoretical Astrophysics
-              </a>
-              {' '}· Fall 2026
+              {isZh ? (
+                <>
+                  即将就任{' '}
+                  <a href="https://www.cita.utoronto.ca/" target="_blank" rel="noopener noreferrer"
+                    className="text-[var(--color-accent)] font-semibold hover:underline underline-offset-2">
+                    CITA研究员
+                  </a>
+                  {' '}·{' '}
+                  <a href="https://www.cita.utoronto.ca/" target="_blank" rel="noopener noreferrer"
+                    className="hover:underline underline-offset-2">
+                    加拿大理论天体物理研究所
+                  </a>
+                  {' '}· 2026年秋
+                </>
+              ) : (
+                <>
+                  Incoming{' '}
+                  <a href="https://www.cita.utoronto.ca/" target="_blank" rel="noopener noreferrer"
+                    className="text-[var(--color-accent)] font-semibold hover:underline underline-offset-2">
+                    CITA Fellow
+                  </a>
+                  {' '}·{' '}
+                  <a href="https://www.cita.utoronto.ca/" target="_blank" rel="noopener noreferrer"
+                    className="hover:underline underline-offset-2">
+                    Canadian Institute for Theoretical Astrophysics
+                  </a>
+                  {' '}· Fall 2026
+                </>
+              )}
             </span>
           </span>
         </motion.div>
 
-        {/* FIX 4: All 7 profile links */}
+        {/* Profile links */}
         <motion.div variants={item} className="flex flex-col items-center gap-3 w-full max-w-lg">
           {/* Row 1: CV (primary) + GitHub */}
           <div className="flex flex-wrap justify-center gap-3">
@@ -164,7 +189,7 @@ export default function Hero() {
               rel="noopener noreferrer"
               className={`${BTN_BASE} border-[var(--color-accent)] bg-[var(--color-accent)] text-[#020818] font-semibold shadow-[0_0_20px_var(--color-accent-glow)] hover:shadow-[0_0_35px_var(--color-accent-glow)]`}
             >
-              <DocumentIcon />Curriculum Vitae
+              <DocumentIcon />{isZh ? '学术简历' : 'Curriculum Vitae'}
             </a>
             <a href="https://github.com/Sylvanzsy?tab=repositories" target="_blank" rel="noopener noreferrer" className={BTN_OUTLINE}>
               <GithubIcon />GitHub
@@ -174,11 +199,11 @@ export default function Hero() {
           {/* Row 2: Scholar, ADS, INSPIRE, LinkedIn, Email */}
           <div className="flex flex-wrap justify-center gap-2">
             {[
-              { href: 'https://scholar.google.com/citations?user=_MmI5KUAAAAJ&hl=en', label: 'Scholar', icon: <ScholarIcon /> },
+              { href: 'https://scholar.google.com/citations?user=_MmI5KUAAAAJ&hl=en', label: isZh ? '谷歌学术' : 'Scholar', icon: <ScholarIcon /> },
               { href: 'https://ui.adsabs.harvard.edu/public-libraries/rn8ayZ1WR1CJV6DeDhc2Ng', label: 'NASA/ADS', icon: <AdsIcon /> },
               { href: 'https://inspirehep.net/authors/2847731?ui-citation-summary=true', label: 'INSPIRE', icon: <AtomIcon /> },
               { href: 'https://www.linkedin.com/in/saiyang-zhang-7597b910b/', label: 'LinkedIn', icon: <LinkedInIcon /> },
-              { href: 'mailto:szhangphys@utexas.edu', label: 'Email', icon: <MailIcon />, noBlank: true },
+              { href: 'mailto:szhangphys@utexas.edu', label: isZh ? '邮件联系' : 'Email', icon: <MailIcon />, noBlank: true },
             ].map(({ href, label, icon, noBlank }) => (
               <a
                 key={label}
@@ -207,7 +232,7 @@ export default function Hero() {
           transition={{ repeat: Infinity, duration: 2, ease: 'easeInOut' }}
           className="flex flex-col items-center gap-1 text-[var(--muted)] hover:text-[var(--color-accent)] transition-colors"
         >
-          <span className="text-xs tracking-widest uppercase">Scroll</span>
+          <span className="text-xs tracking-widest uppercase">{isZh ? '滚动' : 'Scroll'}</span>
           <ChevronDownIcon />
         </motion.a>
       </motion.div>

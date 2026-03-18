@@ -3,10 +3,13 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useLang } from '@/context/LanguageContext'
+import { T } from '@/lib/translations'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 const ADS_LIBRARY = 'https://ui.adsabs.harvard.edu/public-libraries/rn8ayZ1WR1CJV6DeDhc2Ng'
 
+// FIX 3: All 9 PBH arXiv IDs included
 const CARDS = [
   {
     href: '/research/pbh',
@@ -16,7 +19,10 @@ const CARDS = [
       'Using N-body simulations with GIZMO and semi-analytical models to investigate PBHs\u2019 astrophysical impacts \u2014 from influencing first star formation and cosmic radiation background during reionization, to seeding supermassive black holes like Abell2744-QSO1 observed by JWST. Future observations with JWST, Roman, and SKA will be critical in distinguishing PBH-driven structure formation from standard \u039bCDM.',
     papers: [
       { id: '2512.14066' },
+      { id: '2509.21575' },
+      { id: '2508.21748' },
       { id: '2508.00774' },
+      { id: '2505.22567' },
       { id: '2503.17585' },
       { id: '2405.11381' },
       { id: '2310.01763' },
@@ -91,6 +97,9 @@ function ExternalLinkIcon() {
 
 export default function Research() {
   const router = useRouter()
+  const { lang } = useLang()
+  const t = T[lang]
+
   return (
     <section id="research" className="relative py-28 px-4">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent to-[var(--color-accent)]/30" />
@@ -102,93 +111,102 @@ export default function Research() {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <p className="text-[var(--color-accent)] text-xs font-semibold tracking-[0.25em] uppercase mb-3">02 / Research</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)]">Research Areas</h2>
+          <p className="text-[var(--color-accent)] text-xs font-semibold tracking-[0.25em] uppercase mb-3">{t.research.sectionNum}</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)]">{t.research.title}</h2>
           <p className="mt-4 text-[var(--muted)] max-w-xl mx-auto text-sm leading-relaxed">
-            Bridging particle physics and astrophysics to uncover the nature of dark matter and the first objects in the Universe.
+            {t.research.subtitle}
           </p>
         </motion.div>
 
         {/* 3-column grid on large screens, 1-col on mobile */}
         <div className="grid lg:grid-cols-3 gap-6">
-          {CARDS.map((card, i) => (
-            <motion.div
-              key={card.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-60px' }}
-              transition={{ duration: 0.6, delay: i * 0.12, ease: EASE }}
-              whileHover={{ y: -5 }}
-              onClick={() => router.push(card.href)}
-              className="group relative rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-6 flex flex-col overflow-hidden cursor-pointer"
-            >
-              {/* Hover glow */}
-              <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
-                style={{ boxShadow: `inset 0 0 50px ${card.glow}` }}
-              />
-              {/* Top accent line */}
-              <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${card.color} opacity-60 group-hover:opacity-100 transition-opacity duration-500`} />
+          {CARDS.map((card, i) => {
+            // Translate category tags
+            const displayCategory = card.category
+              .replace('Dark Matter', t.research.tagDarkMatter)
+              .replace('Early Universe', t.research.tagEarlyUniverse)
 
-              {/* Icon */}
-              <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} p-0.5 mb-5 shadow-lg shrink-0`}>
-                <div className="w-full h-full rounded-[10px] bg-[var(--card)] flex items-center justify-center text-[var(--color-accent)] dark:text-white">
-                  {card.icon}
-                </div>
-              </div>
-
-              {/* Title + category */}
-              <Link href={card.href} className="block mb-1 hover:text-[var(--color-accent)] transition-colors">
-                <h3 className="text-base font-bold text-[var(--foreground)] leading-snug group-hover:text-[var(--color-accent)] transition-colors">{card.title}</h3>
-              </Link>
-              <p className="text-xs text-[var(--color-accent)] font-medium mb-4">{card.category}</p>
-
-              {/* Description */}
-              <p className="text-sm text-[var(--muted)] leading-relaxed flex-1">{card.description}</p>
-
-              {/* Read more */}
-              <Link
-                href={card.href}
-                className="inline-flex items-center gap-1 mt-4 text-xs font-semibold text-[var(--color-accent)] hover:underline underline-offset-2 self-start"
+            return (
+              <motion.div
+                key={card.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-60px' }}
+                transition={{ duration: 0.6, delay: i * 0.12, ease: EASE }}
+                whileHover={{ y: -5 }}
+                onClick={() => router.push(card.href)}
+                className="group relative rounded-2xl border border-[var(--card-border)] bg-[var(--card)] p-6 flex flex-col overflow-hidden cursor-pointer"
               >
-                Read more
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-                </svg>
-              </Link>
+                {/* Hover glow */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"
+                  style={{ boxShadow: `inset 0 0 50px ${card.glow}` }}
+                />
+                {/* Top accent line */}
+                <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${card.color} opacity-60 group-hover:opacity-100 transition-opacity duration-500`} />
 
-              {/* Related papers chips */}
-              <div className="mt-4 pt-4 border-t border-[var(--card-border)]">
-                <p className="text-xs text-[var(--muted)] mb-2 font-medium">Related papers</p>
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {card.papers.map((p) => (
-                    <a
-                      key={p.id}
-                      href={`https://arxiv.org/abs/${p.id}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="text-[10px] font-mono px-2 py-0.5 rounded border border-[var(--color-accent)]/30 text-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/60 transition-colors"
-                    >
-                      arXiv:{p.id}
-                    </a>
-                  ))}
+                {/* Icon */}
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${card.color} p-0.5 mb-5 shadow-lg shrink-0`}>
+                  <div className="w-full h-full rounded-[10px] bg-[var(--card)] flex items-center justify-center text-[var(--color-accent)] dark:text-white">
+                    {card.icon}
+                  </div>
                 </div>
 
-                {/* ADS library button */}
-                <a
-                  href={ADS_LIBRARY}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-accent)] hover:underline decoration-[var(--color-accent)]/50 underline-offset-2 transition-all"
+                {/* Title + category */}
+                <Link href={card.href} className="block mb-1 hover:text-[var(--color-accent)] transition-colors">
+                  <h3 className="text-base font-bold text-[var(--foreground)] leading-snug group-hover:text-[var(--color-accent)] transition-colors">{card.title}</h3>
+                </Link>
+                <p className="text-xs text-[var(--color-accent)] font-medium mb-4">{displayCategory}</p>
+
+                {/* Description */}
+                <p className="text-sm text-[var(--muted)] leading-relaxed flex-1">{card.description}</p>
+
+                {/* Read more */}
+                <Link
+                  href={card.href}
+                  className="inline-flex items-center gap-1 mt-4 text-xs font-semibold text-[var(--color-accent)] hover:underline underline-offset-2 self-start"
                 >
-                  View all related papers
-                  <ExternalLinkIcon />
-                </a>
-              </div>
-            </motion.div>
-          ))}
+                  {t.research.readMore}
+                  {lang === 'en' && (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                  )}
+                </Link>
+
+                {/* Related papers chips */}
+                <div className="mt-4 pt-4 border-t border-[var(--card-border)]">
+                  <p className="text-xs text-[var(--muted)] mb-2 font-medium">{t.research.relatedPapers}</p>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {card.papers.map((p) => (
+                      <a
+                        key={p.id}
+                        href={`https://arxiv.org/abs/${p.id}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-[10px] font-mono px-2 py-0.5 rounded border border-[var(--color-accent)]/30 text-[var(--color-accent)] hover:bg-[var(--color-accent)]/10 hover:border-[var(--color-accent)]/60 transition-colors"
+                      >
+                        arXiv:{p.id}
+                      </a>
+                    ))}
+                  </div>
+
+                  {/* ADS library button */}
+                  <a
+                    href={ADS_LIBRARY}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-accent)] hover:underline decoration-[var(--color-accent)]/50 underline-offset-2 transition-all"
+                  >
+                    {t.research.viewAll}
+                    <ExternalLinkIcon />
+                  </a>
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>

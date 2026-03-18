@@ -4,6 +4,8 @@ import { ReactElement, useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import aboutData from '../../content/about.json'
+import { useLang } from '@/context/LanguageContext'
+import { T } from '@/lib/translations'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
@@ -58,12 +60,11 @@ const INTEREST_LINKS: Record<string, string> = {
   'Supermassive Dark Stars': '/research/dark-stars',
 }
 
-// Replace files in /public/photos/ to populate the gallery
 const LIFE_PHOTOS = [
-  { src: '/photos/sigma.jpg',  alt: 'Sigma the cat',                    caption: 'Sigma — my older cat 🐱' },
-  { src: '/photos/eta.jpg',    alt: 'Eta the cat',                      caption: 'Eta — my younger cat 🐱' }, // Eta's photo coming soon — shows placeholder until file exists
-  { src: '/photos/talk1.jpg',  alt: 'Giving a talk at conference',      caption: 'ITC Luncheon Talk, Harvard Center for Astrophysics 🎤 (Apr 2025)' },
-  { src: '/photos/hiking.jpg', alt: 'Hiking at Torreys Peak Colorado',  caption: 'Torreys Peak, Colorado 🏔️ (14,267 ft)' },
+  { src: '/photos/sigma.jpg',  alt: 'Sigma the cat',                    caption: 'Sigma — my older cat 🐱',                                           objectPosition: 'center' },
+  { src: '/photos/eta.jpg',    alt: 'Eta the cat',                      caption: 'Eta — my younger cat 🐱',                                            objectPosition: 'center' },
+  { src: '/photos/talk1.jpg',  alt: 'Giving a talk at conference',      caption: 'ITC Luncheon Talk, Harvard Center for Astrophysics 🎤 (Apr 2025)',   objectPosition: 'center top' },
+  { src: '/photos/hiking.jpg', alt: 'Hiking at Torreys Peak Colorado',  caption: 'Torreys Peak, Colorado 🏔️ (14,267 ft)',                             objectPosition: 'center' },
 ]
 
 function GraduationIcon() {
@@ -83,15 +84,35 @@ function TrophyIcon() {
   )
 }
 
-// Individual photo card with per-image error fallback
-function PhotoCard({ src, alt, caption }: { src: string; alt: string; caption: string }) {
+// FIX 1a: status badge with proper contrast in both modes
+function StatusBadge({ status, label }: { status: string; label: string }) {
+  if (status === 'Candidate') {
+    return (
+      <span className="ml-auto text-xs px-2 py-0.5 rounded-full shrink-0 bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200 font-medium">
+        {label}
+      </span>
+    )
+  }
+  return (
+    <span className="ml-auto text-xs px-2 py-0.5 rounded-full shrink-0 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 font-medium">
+      {label}
+    </span>
+  )
+}
+
+// FIX 4a: taller photo cards with 4:3 aspect ratio
+function PhotoCard({ src, alt, caption, objectPosition = 'center' }: {
+  src: string; alt: string; caption: string; objectPosition?: string
+}) {
   const [errored, setErrored] = useState(false)
 
   return (
     <div className="flex flex-col gap-2">
-      <div className="relative w-full h-[280px] rounded-xl overflow-hidden border border-[var(--card-border)] shadow-[0_2px_16px_rgba(0,0,0,0.07)]">
+      <div
+        className="relative w-full rounded-xl overflow-hidden border border-[var(--card-border)] shadow-[0_2px_16px_rgba(0,0,0,0.07)]"
+        style={{ aspectRatio: '4/3', minHeight: '220px' }}
+      >
         {errored ? (
-          /* Placeholder shown when image file is missing */
           <div className="absolute inset-0 flex flex-col items-center justify-center gap-2.5 bg-gradient-to-br from-[var(--color-space-800)] to-[var(--color-space-900)]">
             <span className="text-4xl select-none opacity-45">📷</span>
             <span className="text-xs text-[var(--muted)] italic">Photo coming soon</span>
@@ -104,6 +125,7 @@ function PhotoCard({ src, alt, caption }: { src: string; alt: string; caption: s
             loading="lazy"
             onError={() => setErrored(true)}
             className="w-full h-full object-cover"
+            style={{ objectPosition }}
           />
         )}
       </div>
@@ -116,6 +138,9 @@ function PhotoCard({ src, alt, caption }: { src: string; alt: string; caption: s
 }
 
 export default function About() {
+  const { lang } = useLang()
+  const t = T[lang]
+
   return (
     <section id="about" className="relative py-28 px-4">
       <div className="max-w-6xl mx-auto">
@@ -127,13 +152,13 @@ export default function About() {
           variants={fadeUp}
           className="mb-16 text-center"
         >
-          <p className="text-[var(--color-accent)] text-xs font-semibold tracking-[0.25em] uppercase mb-3">01 / About</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)]">About Me</h2>
+          <p className="text-[var(--color-accent)] text-xs font-semibold tracking-[0.25em] uppercase mb-3">{t.about.sectionNum}</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)]">{t.about.title}</h2>
         </motion.div>
 
         <div className="grid lg:grid-cols-[340px_1fr] gap-12 items-start">
 
-          {/* Left — Portrait only */}
+          {/* Left — Portrait */}
           <motion.div
             initial="hidden"
             whileInView="show"
@@ -143,7 +168,6 @@ export default function About() {
           >
             <div className="relative group">
               <div className="absolute -inset-2 rounded-2xl bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-violet)] opacity-25 blur-xl group-hover:opacity-45 transition-opacity duration-500" />
-              {/* Replace /photos/avatar.jpg with your portrait photo */}
               <div className="relative w-[280px] h-[280px] rounded-2xl overflow-hidden border border-[var(--card-border)] bg-[var(--color-space-800)] shadow-[0_0_40px_rgba(76,201,240,0.12)]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -173,7 +197,7 @@ export default function About() {
             {/* Research Interests */}
             <motion.div variants={fadeUp} className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-5">
               <h3 className="text-sm font-semibold text-[var(--foreground)] mb-4 flex items-center gap-2">
-                <span className="w-4 h-0.5 bg-[var(--color-accent)] rounded" />Research Interests
+                <span className="w-4 h-0.5 bg-[var(--color-accent)] rounded" />{t.about.interests}
               </h3>
               <div className="flex flex-wrap gap-2">
                 {aboutData.interests.map((interest) => {
@@ -197,45 +221,48 @@ export default function About() {
             {/* Education */}
             <motion.div variants={fadeUp} className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-5">
               <h3 className="text-sm font-semibold text-[var(--foreground)] mb-4 flex items-center gap-2">
-                <span className="w-4 h-0.5 bg-[var(--color-accent)] rounded" />Education
+                <span className="w-4 h-0.5 bg-[var(--color-accent)] rounded" />{t.about.education}
               </h3>
               <div className="flex flex-col gap-4">
-                {aboutData.education.map((edu) => (
-                  <div key={edu.degree} className="flex items-start gap-3">
-                    <div className="mt-0.5 w-7 h-7 rounded-full bg-[var(--color-accent)]/15 border border-[var(--color-accent)]/25 flex items-center justify-center text-[var(--color-accent)] shrink-0">
-                      <GraduationIcon />
+                {aboutData.education.map((edu) => {
+                  const statusLabel = edu.status === 'Candidate' ? t.about.statusCandidate : t.about.statusGraduated
+                  return (
+                    <div key={edu.degree} className="flex items-start gap-3">
+                      <div className="mt-0.5 w-7 h-7 rounded-full bg-[var(--color-accent)]/15 border border-[var(--color-accent)]/25 flex items-center justify-center text-[var(--color-accent)] shrink-0">
+                        <GraduationIcon />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-semibold text-[var(--foreground)]">{edu.degree}</p>
+                        <p className="text-xs text-[var(--color-accent)]">
+                          {edu.institution === 'University of Texas at Austin' ? (
+                            <a href="https://www.utexas.edu/" target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-2">
+                              {edu.institution}
+                            </a>
+                          ) : edu.institution === 'Colgate University' ? (
+                            <a href="https://www.colgate.edu/" target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-2">
+                              {edu.institution}
+                            </a>
+                          ) : edu.institution}
+                          {' · '}{edu.department}
+                        </p>
+                        {edu.advisor && (
+                          <p className="text-xs text-[var(--muted)]">{t.about.advisor} {edu.advisor} · {edu.year}</p>
+                        )}
+                        {edu.thesis && (
+                          <p className="text-xs text-[var(--muted)] italic mt-0.5 truncate">&ldquo;{edu.thesis}&rdquo;</p>
+                        )}
+                      </div>
+                      <StatusBadge status={edu.status} label={statusLabel} />
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-semibold text-[var(--foreground)]">{edu.degree}</p>
-                      <p className="text-xs text-[var(--color-accent)]">
-                        {edu.institution === 'University of Texas at Austin' ? (
-                          <a href="https://www.utexas.edu/" target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-2">
-                            {edu.institution}
-                          </a>
-                        ) : edu.institution === 'Colgate University' ? (
-                          <a href="https://www.colgate.edu/" target="_blank" rel="noopener noreferrer" className="hover:underline underline-offset-2">
-                            {edu.institution}
-                          </a>
-                        ) : edu.institution}
-                        {' · '}{edu.department}
-                      </p>
-                      {edu.advisor && (
-                        <p className="text-xs text-[var(--muted)]">Advisor: {edu.advisor} · {edu.year}</p>
-                      )}
-                      {edu.thesis && (
-                        <p className="text-xs text-[var(--muted)] italic mt-0.5 truncate">&ldquo;{edu.thesis}&rdquo;</p>
-                      )}
-                    </div>
-                    <span className="ml-auto text-xs px-2 py-0.5 rounded-full bg-[var(--color-space-700)]/60 text-[var(--muted)] shrink-0">{edu.status}</span>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             </motion.div>
 
             {/* Awards */}
             <motion.div variants={fadeUp} className="rounded-xl border border-[var(--card-border)] bg-[var(--card)] p-5">
               <h3 className="text-sm font-semibold text-[var(--foreground)] mb-4 flex items-center gap-2">
-                <span className="w-4 h-0.5 bg-[var(--color-accent)] rounded" />Awards &amp; Fellowships
+                <span className="w-4 h-0.5 bg-[var(--color-accent)] rounded" />{t.about.awards}
               </h3>
               <div className="flex flex-col gap-2.5">
                 {aboutData.awards.map((award) => (
@@ -252,18 +279,17 @@ export default function About() {
               </div>
             </motion.div>
 
-            {/* ── Life Outside Research ── */}
+            {/* Life Outside Research */}
             <motion.div variants={fadeUp} className="pt-2">
-              {/* Section divider */}
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex-1 border-t border-dashed border-[var(--color-accent)]/25" />
                 <h3 className="text-sm font-semibold text-[var(--foreground)] whitespace-nowrap">
-                  📸 Life Outside Research
+                  {t.about.lifeOutside}
                 </h3>
                 <div className="flex-1 border-t border-dashed border-[var(--color-accent)]/25" />
               </div>
 
-              {/* 2-col on desktop, 1-col on mobile */}
+              {/* FIX 5e: 1-col on mobile, 2-col on sm+ */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {LIFE_PHOTOS.map((photo) => (
                   <PhotoCard
@@ -271,6 +297,7 @@ export default function About() {
                     src={photo.src}
                     alt={photo.alt}
                     caption={photo.caption}
+                    objectPosition={photo.objectPosition}
                   />
                 ))}
               </div>
