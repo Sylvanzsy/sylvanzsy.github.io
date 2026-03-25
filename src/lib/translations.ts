@@ -10,7 +10,7 @@ export const T: Record<Lang, {
     degreeLabels: Record<string, string>
     departmentLabels: Record<string, string>
   }
-  media: { sectionNum: string; title: string; groupPBH: string; groupDarkStars: string; topicPBH: string; topicDarkStars: string; readArticle: string }
+  media: { sectionNum: string; title: string; subtitle: string; groupPBH: string; groupDarkStars: string; topicPBH: string; topicDarkStars: string; readArticle: string }
   research: { sectionNum: string; title: string; subtitle: string; readMore: string; relatedPapers: string; viewAll: string; tagDarkMatter: string; tagEarlyUniverse: string }
   publications: {
     sectionNum: string; title: string; sortLabel: string; yearLabel: string; yearAll: string
@@ -62,6 +62,7 @@ export const T: Record<Lang, {
     media: {
       sectionNum: '03 / Press',
       title: 'Media Coverage',
+      subtitle: 'Research covered by international science media',
       groupPBH: 'Primordial Black Holes & JWST',
       groupDarkStars: 'Dark Stars',
       topicPBH: 'PBH',
@@ -171,6 +172,7 @@ export const T: Record<Lang, {
     media: {
       sectionNum: '03 / 媒体',
       title: '媒体报道',
+      subtitle: '研究成果获国际科学媒体报道',
       groupPBH: '原初黑洞与詹姆斯·韦伯望远镜',
       groupDarkStars: '暗物质星',
       topicPBH: '原初黑洞',
