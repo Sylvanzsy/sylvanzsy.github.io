@@ -79,7 +79,7 @@ const TYPE_FILTER_KEYS = ['All', 'Peer-Reviewed', 'Preprints', 'First Author'] a
 
 const ALL_YEARS = [...new Set(publicationsData.map((p) => p.year))].sort((a, b) => b - a)
 
-function PublicationEntry({ pub, index, t }: { pub: Publication; index: number; t: typeof T['en'] }) {
+function PublicationEntry({ pub, index, t, lang }: { pub: Publication; index: number; t: typeof T['en']; lang: string }) {
   return (
     <motion.div
       layout
@@ -141,7 +141,7 @@ function PublicationEntry({ pub, index, t }: { pub: Publication; index: number; 
         <div className="flex flex-wrap gap-1.5 mb-3">
           {pub.tags.map((tag) => (
             <span key={tag} className="text-xs px-2 py-0.5 rounded-md bg-slate-100 text-slate-700 dark:bg-slate-700/70 dark:text-slate-200 font-mono border border-slate-200 dark:border-slate-600/50">
-              {tag}
+              {lang === 'zh' ? (t.pubTags[tag] ?? tag) : tag}
             </span>
           ))}
         </div>
@@ -323,7 +323,7 @@ export default function Publications() {
           <AnimatePresence mode="popLayout">
             {filtered.length > 0 ? (
               filtered.map((pub, i) => (
-                <PublicationEntry key={pub.id} pub={pub} index={i} t={t} />
+                <PublicationEntry key={pub.id} pub={pub} index={i} t={t} lang={lang} />
               ))
             ) : (
               <motion.p

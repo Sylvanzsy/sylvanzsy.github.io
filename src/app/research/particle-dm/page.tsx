@@ -1,5 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import ResearchPlot from '@/components/ResearchPlot'
+import { useLang } from '@/context/LanguageContext'
+import { T } from '@/lib/translations'
 
 const PAPERS = [
   {
@@ -36,12 +40,10 @@ const PAPERS = [
   },
 ]
 
-
-export const metadata = {
-  title: 'Particle Dark Matter & Pop III Stars | Saiyang Zhang',
-}
-
 export default function ParticleDMPage() {
+  const { lang } = useLang()
+  const t = T[lang]
+
   return (
     <main className="max-w-3xl mx-auto px-4 pt-28 pb-24">
       {/* Back */}
@@ -52,16 +54,16 @@ export default function ParticleDMPage() {
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-x-0.5 transition-transform">
           <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
         </svg>
-        Back to Research
+        {t.researchPage.backToResearch}
       </Link>
 
       {/* Header */}
       <div className="mb-10">
         <p className="text-[#c77dff] text-xs font-semibold tracking-[0.2em] uppercase mb-3">
-          Dark Matter
+          {t.researchPage.particleDMCategory}
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] leading-tight mb-4">
-          Particle Dark Matter &amp; Pop III Stars
+          {t.researchPage.particleDMTitle}
         </h1>
         <div className="h-px bg-gradient-to-r from-[#7b2fbe]/50 to-transparent" />
       </div>
@@ -83,7 +85,7 @@ export default function ParticleDMPage() {
       <div className="mb-14">
         <h2 className="text-lg font-bold text-[var(--foreground)] mb-6 flex items-center gap-3">
           <span className="w-5 h-0.5 bg-[#c77dff] rounded" />
-          Research Highlights
+          {t.researchPage.highlights}
         </h2>
         <ResearchPlot
           src="/plots/PopIIIDM-scatter.png"
@@ -103,7 +105,7 @@ export default function ParticleDMPage() {
       <div className="mb-10">
         <h2 className="text-lg font-bold text-[var(--foreground)] mb-5 flex items-center gap-3">
           <span className="w-5 h-0.5 bg-[#c77dff] rounded" />
-          Related Papers
+          {t.research.relatedPapers}
         </h2>
         <div className="flex flex-col gap-4">
           {PAPERS.map((p) => (
@@ -130,7 +132,7 @@ export default function ParticleDMPage() {
                     arXiv:{p.arxiv}
                   </a>
                   {p.firstAuthor && (
-                    <span className="ml-2 text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-[var(--color-accent)] text-[#020818]">★ First Author</span>
+                    <span className="ml-2 text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-[var(--color-accent)] text-[#020818]">★ {t.researchPage.firstAuthor}</span>
                   )}
                 </p>
               </div>

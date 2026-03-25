@@ -11,6 +11,13 @@ export const T: Record<Lang, {
     departmentLabels: Record<string, string>
   }
   media: { sectionNum: string; title: string; subtitle: string; groupPBH: string; groupDarkStars: string; topicPBH: string; topicDarkStars: string; readArticle: string }
+  researchPage: {
+    backToResearch: string; highlights: string; firstAuthor: string
+    pbhTitle: string; pbhCategory: string
+    darkStarsTitle: string; darkStarsCategory: string
+    particleDMTitle: string; particleDMCategory: string
+  }
+  pubTags: Record<string, string>
   research: { sectionNum: string; title: string; subtitle: string; readMore: string; relatedPapers: string; viewAll: string; tagDarkMatter: string; tagEarlyUniverse: string }
   publications: {
     sectionNum: string; title: string; sortLabel: string; yearLabel: string; yearAll: string
@@ -69,6 +76,18 @@ export const T: Record<Lang, {
       topicDarkStars: 'Dark Stars',
       readArticle: 'Read article →',
     },
+    researchPage: {
+      backToResearch: 'Back to Research',
+      highlights: 'Research Highlights',
+      firstAuthor: 'First Author',
+      pbhTitle: 'Primordial Black Holes (PBHs)',
+      pbhCategory: 'Dark Matter · Early Universe',
+      darkStarsTitle: 'Supermassive Dark Stars (SMDSs)',
+      darkStarsCategory: 'Dark Matter · Early Universe',
+      particleDMTitle: 'Particle Dark Matter & Pop III Stars',
+      particleDMCategory: 'Dark Matter',
+    },
+    pubTags: {},
     research: {
       sectionNum: '02 / Research',
       title: 'Research Areas',
@@ -178,6 +197,45 @@ export const T: Record<Lang, {
       topicPBH: '原初黑洞',
       topicDarkStars: '暗物质星',
       readArticle: '阅读原文 →',
+    },
+    researchPage: {
+      backToResearch: '返回研究方向',
+      highlights: '研究亮点',
+      firstAuthor: '第一作者',
+      pbhTitle: '原初黑洞（PBH）',
+      pbhCategory: '暗物质 · 早期宇宙',
+      darkStarsTitle: '超大质量暗物质星（SMDS）',
+      darkStarsCategory: '暗物质 · 早期宇宙',
+      particleDMTitle: '粒子暗物质与第三族星',
+      particleDMCategory: '暗物质',
+    },
+    pubTags: {
+      'PBH': '原初黑洞',
+      'JWST': '韦伯望远镜',
+      'AGN': '活动星系核',
+      'Early Universe': '早期宇宙',
+      'SMBH Binaries': '超大质量黑洞双星',
+      'First Stars': '第一代恒星',
+      'Galaxy Formation': '星系形成',
+      'Halo Mass Function': '晕质量函数',
+      'Structure Formation': '结构形成',
+      'Dark Stars': '暗物质星',
+      'Roman Telescope': '罗曼望远镜',
+      'Pop III': '第三族星',
+      'Black Holes': '黑洞',
+      'High-z': '高红移',
+      'Dark Matter': '暗物质',
+      'Cosmic History': '宇宙历史',
+      'Black Hole Origins': '黑洞起源',
+      'LLM': '大语言模型',
+      'Scientific ML': '科学机器学习',
+      'Particle Physics': '粒子物理',
+      'Bayesian Statistics': '贝叶斯统计',
+      'Neutrino Floor': '中微子底',
+      'Direct Detection': '直接探测',
+      'Neutron Stars': '中子星',
+      'Blazar': '耀变体',
+      'Optical Variability': '光学变化',
     },
     research: {
       sectionNum: '02 / 研究',

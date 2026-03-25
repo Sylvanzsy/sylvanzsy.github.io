@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLang } from '@/context/LanguageContext'
 import { T } from '@/lib/translations'
@@ -75,6 +76,9 @@ export default function Navbar() {
   }, [])
 
   const isDark = theme === 'dark'
+  const pathname = usePathname()
+  const isSubpage = pathname !== '/'
+  const navHref = (anchor: string) => isSubpage ? `/${anchor}` : anchor
 
   return (
     <motion.nav
@@ -102,7 +106,7 @@ export default function Navbar() {
         <ul className="hidden lg:flex items-center gap-0.5">
           {NAV_KEYS.map((link) => (
             <li key={link.href}>
-              <a href={link.href} className="px-3 py-1.5 rounded-md text-xs text-[var(--muted)] hover:text-[var(--color-accent)] hover:bg-[var(--color-accent-glow)] transition-all duration-200 font-medium">
+              <a href={navHref(link.href)} className="px-3 py-1.5 rounded-md text-xs text-[var(--muted)] hover:text-[var(--color-accent)] hover:bg-[var(--color-accent-glow)] transition-all duration-200 font-medium">
                 {t.nav[link.key]}
               </a>
             </li>
@@ -166,7 +170,7 @@ export default function Navbar() {
               {NAV_KEYS.map((link) => (
                 <li key={link.href}>
                   <a
-                    href={link.href}
+                    href={navHref(link.href)}
                     onClick={() => setMobileOpen(false)}
                     className="block px-3 py-2 rounded-md text-sm text-[var(--muted)] hover:text-[var(--color-accent)] hover:bg-[var(--color-accent-glow)] transition-all"
                   >

@@ -115,9 +115,16 @@ function ArticleCard({ article, isDark, lang }: { article: Article; isDark: bool
         </div>
 
         {/* Headline */}
-        <p className="text-sm font-semibold text-[var(--foreground)] leading-snug line-clamp-3 group-hover:text-[var(--color-accent)] transition-colors duration-200 flex-1">
-          {article.headline}
-        </p>
+        <div className="flex-1">
+          <p className="text-sm font-semibold text-[var(--foreground)] leading-snug line-clamp-3 group-hover:text-[var(--color-accent)] transition-colors duration-200">
+            {article.headline}
+          </p>
+          {lang === 'zh' && article.titleZh && (
+            <p className="text-xs italic text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">
+              {article.titleZh}
+            </p>
+          )}
+        </div>
 
         {/* Footer: topic tag + read link */}
         <div className="flex items-center justify-between pt-2.5 border-t border-[var(--card-border)]">

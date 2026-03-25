@@ -1,5 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import ResearchPlot from '@/components/ResearchPlot'
+import { useLang } from '@/context/LanguageContext'
+import { T } from '@/lib/translations'
 
 const PAPERS = [
   {
@@ -76,12 +80,10 @@ const PAPERS = [
   },
 ]
 
-
-export const metadata = {
-  title: 'Primordial Black Holes (PBHs) | Saiyang Zhang',
-}
-
 export default function PBHPage() {
+  const { lang } = useLang()
+  const t = T[lang]
+
   return (
     <main className="max-w-3xl mx-auto px-4 pt-28 pb-24">
       {/* Back */}
@@ -92,16 +94,16 @@ export default function PBHPage() {
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:-translate-x-0.5 transition-transform">
           <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
         </svg>
-        Back to Research
+        {t.researchPage.backToResearch}
       </Link>
 
       {/* Header */}
       <div className="mb-10">
         <p className="text-[var(--color-accent)] text-xs font-semibold tracking-[0.2em] uppercase mb-3">
-          Dark Matter · Early Universe
+          {t.researchPage.pbhCategory}
         </p>
         <h1 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)] leading-tight mb-4">
-          Primordial Black Holes (PBHs)
+          {t.researchPage.pbhTitle}
         </h1>
         <div className="h-px bg-gradient-to-r from-[var(--color-accent)]/50 to-transparent" />
       </div>
@@ -123,9 +125,8 @@ export default function PBHPage() {
       <div className="mb-14">
         <h2 className="text-lg font-bold text-[var(--foreground)] mb-6 flex items-center gap-3">
           <span className="w-5 h-0.5 bg-[var(--color-accent)] rounded" />
-          Research Highlights
+          {t.researchPage.highlights}
         </h2>
-        {/* Animated GIF — uses <img> tag (not next/image) so animation plays */}
         <ResearchPlot
           src="/plots/PBHHydroSim_animation.gif"
           alt="GIZMO cosmological hydrodynamics simulation showing gas density on the left and temperature on the right around a massive primordial black hole at t equals 14.3 Myr redshift 112.34, with PBH accretion feedback heating surrounding gas"
@@ -145,7 +146,7 @@ export default function PBHPage() {
       <div className="mb-10">
         <h2 className="text-lg font-bold text-[var(--foreground)] mb-5 flex items-center gap-3">
           <span className="w-5 h-0.5 bg-[var(--color-accent)] rounded" />
-          Related Papers
+          {t.research.relatedPapers}
         </h2>
         <div className="flex flex-col gap-4">
           {PAPERS.map((p) => (
@@ -172,7 +173,7 @@ export default function PBHPage() {
                     arXiv:{p.arxiv}
                   </a>
                   {p.firstAuthor && (
-                    <span className="ml-2 text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-[var(--color-accent)] text-[#020818]">★ First Author</span>
+                    <span className="ml-2 text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-[var(--color-accent)] text-[#020818]">★ {t.researchPage.firstAuthor}</span>
                   )}
                 </p>
               </div>
