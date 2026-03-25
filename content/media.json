@@ -1,0 +1,82 @@
+[
+  {
+    "date": "Jan. 2026",
+    "outlet": "Daily Galaxy",
+    "headline": "This Starless Monster Black Hole May Be Older Than the First Galaxies",
+    "url": "https://dailygalaxy.com/2026/01/monster-black-hole-older-first-galaxies/",
+    "topic": "PBH",
+    "featured": false
+  },
+  {
+    "date": "Jan. 2026",
+    "outlet": "Interesting Engineering",
+    "headline": "50 million times heavier than Sun: This black hole breaks rules of how galaxies are formed",
+    "url": "https://interestingengineering.com/space/black-holes-born-before-stars-jwst-finds",
+    "topic": "PBH",
+    "featured": false
+  },
+  {
+    "date": "Jan. 2026",
+    "outlet": "New Scientist",
+    "headline": "Gargantuan black hole may be a remnant from the dawn of the universe",
+    "url": "https://www.newscientist.com/article/2509631-gargantuan-black-hole-may-be-a-remnant-from-the-dawn-of-the-universe/",
+    "topic": "PBH",
+    "featured": true
+  },
+  {
+    "date": "Sep. 2025",
+    "outlet": "The Guardian",
+    "headline": "'A paradigm change': black hole spotted that may have been created moments after big bang",
+    "url": "https://www.theguardian.com/science/2025/sep/02/primordial-black-hole-big-bang-james-webb-space-telescope",
+    "topic": "PBH",
+    "featured": true
+  },
+  {
+    "date": "Sep. 2025",
+    "outlet": "Science Alert",
+    "headline": "JWST May Have Found The First Direct Evidence of a Primordial Black Hole",
+    "url": "https://www.sciencealert.com/jwst-may-have-found-the-first-direct-evidence-of-a-primordial-black-hole",
+    "topic": "PBH",
+    "featured": true
+  },
+  {
+    "date": "Sep. 2025",
+    "outlet": "Yahoo News",
+    "headline": "JWST May Have Found The First Direct Evidence of a Primordial Black Hole",
+    "url": "https://www.yahoo.com/news/articles/50-million-times-heavier-sun-164913649.html",
+    "topic": "PBH",
+    "featured": false
+  },
+  {
+    "date": "Sep. 2025",
+    "outlet": "Phys.org",
+    "headline": "The cosmic giant challenging our understanding of galaxy formation in the early universe",
+    "url": "https://phys.org/news/2025-09-cosmic-giant-galaxy-formation-early.html",
+    "topic": "PBH",
+    "featured": false
+  },
+  {
+    "date": "Jul. 2025",
+    "outlet": "Space.com",
+    "headline": "JWST finds cosmic monster ruling tiny early galaxy: Was it forged by black holes from the Big Bang?",
+    "url": "https://www.space.com/astronomy/jwst-finds-cosmic-monster-ruling-tiny-early-galaxy-was-it-forged-by-black-holes-from-the-big-bang",
+    "topic": "PBH",
+    "featured": true
+  },
+  {
+    "date": "Aug. 2022",
+    "outlet": "Phys.org",
+    "headline": "Stampede2 supercomputer simulates star seeding, heating effects of primordial black holes",
+    "url": "https://phys.org/news/2022-08-stampede2-supercomputer-simulates-star-seeding.html",
+    "topic": "PBH",
+    "featured": false
+  },
+  {
+    "date": "Jun. 2023",
+    "outlet": "Phys.org",
+    "headline": "Nancy Grace Roman space telescope could detect supermassive dark stars",
+    "url": "https://phys.org/news/2023-06-nancy-grace-roman-space-telescope.html",
+    "topic": "Dark Stars",
+    "featured": false
+  }
+]

@@ -1,7 +1,7 @@
 import type { Lang } from '@/context/LanguageContext'
 
 export const T: Record<Lang, {
-  nav: { about: string; research: string; publications: string; talks: string; contact: string; cv: string }
+  nav: { about: string; research: string; press: string; publications: string; talks: string; contact: string; cv: string }
   about: {
     sectionNum: string; title: string; interests: string; education: string; awards: string
     lifeOutside: string; statusCandidate: string; statusGraduated: string; advisor: string
@@ -10,6 +10,7 @@ export const T: Record<Lang, {
     degreeLabels: Record<string, string>
     departmentLabels: Record<string, string>
   }
+  media: { sectionNum: string; title: string; groupPBH: string; groupDarkStars: string; topicPBH: string; topicDarkStars: string; readArticle: string }
   research: { sectionNum: string; title: string; subtitle: string; readMore: string; relatedPapers: string; viewAll: string; tagDarkMatter: string; tagEarlyUniverse: string }
   publications: {
     sectionNum: string; title: string; sortLabel: string; yearLabel: string; yearAll: string
@@ -37,6 +38,7 @@ export const T: Record<Lang, {
     nav: {
       about: 'About',
       research: 'Research',
+      press: 'Press',
       publications: 'Publications',
       talks: 'Talks',
       contact: 'Contact',
@@ -56,6 +58,15 @@ export const T: Record<Lang, {
       interestLabels: {},
       degreeLabels: {},
       departmentLabels: {},
+    },
+    media: {
+      sectionNum: '03 / Press',
+      title: 'Media Coverage',
+      groupPBH: 'Primordial Black Holes & JWST',
+      groupDarkStars: 'Dark Stars',
+      topicPBH: 'PBH',
+      topicDarkStars: 'Dark Stars',
+      readArticle: 'Read article →',
     },
     research: {
       sectionNum: '02 / Research',
@@ -119,6 +130,7 @@ export const T: Record<Lang, {
     nav: {
       about: '关于我',
       research: '研究方向',
+      press: '媒体',
       publications: '学术成果',
       talks: '学术报告',
       contact: '联系方式',
@@ -155,6 +167,15 @@ export const T: Record<Lang, {
       departmentLabels: {
         'Magna cum laude': '优等生荣誉',
       },
+    },
+    media: {
+      sectionNum: '03 / 媒体',
+      title: '媒体报道',
+      groupPBH: '原初黑洞与詹姆斯·韦伯望远镜',
+      groupDarkStars: '暗物质星',
+      topicPBH: '原初黑洞',
+      topicDarkStars: '暗物质星',
+      readArticle: '阅读原文 →',
     },
     research: {
       sectionNum: '02 / 研究',

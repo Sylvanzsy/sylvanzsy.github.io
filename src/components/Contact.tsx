@@ -1,8 +1,47 @@
 'use client'
 
+import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useLang } from '@/context/LanguageContext'
 import { T } from '@/lib/translations'
+
+function VisitorCounter({ lang }: { lang: string }) {
+  const [count, setCount] = useState<number | null>(null)
+  const [display, setDisplay] = useState(0)
+  const animRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    fetch('https://api.countapi.xyz/hit/sylvanzsy.github.io/visits')
+      .then((r) => r.json())
+      .then((d) => { if (typeof d.value === 'number') setCount(d.value) })
+      .catch(() => {})
+  }, [])
+
+  useEffect(() => {
+    if (count === null) return
+    const duration = 1200
+    const steps = 40
+    const increment = count / steps
+    let current = 0
+    let step = 0
+    const tick = () => {
+      step++
+      current = step < steps ? Math.round(increment * step) : count
+      setDisplay(current)
+      if (step < steps) animRef.current = setTimeout(tick, duration / steps)
+    }
+    tick()
+    return () => { if (animRef.current) clearTimeout(animRef.current) }
+  }, [count])
+
+  if (count === null) return null
+
+  return (
+    <p className="mt-1.5 text-xs text-[var(--muted)]/50">
+      👁 {display.toLocaleString()} {lang === 'zh' ? '位访客' : 'visitors'}
+    </p>
+  )
+}
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
@@ -184,6 +223,7 @@ export default function Contact() {
         className="mt-20 text-center text-xs text-[var(--muted)]/60"
       >
         <p>{t.contact.footer1}</p>
+        <VisitorCounter lang={lang} />
         <p className="mt-1">{t.contact.footer2}</p>
       </motion.div>
     </section>

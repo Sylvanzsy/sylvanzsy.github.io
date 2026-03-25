@@ -9,6 +9,7 @@ import { T } from '@/lib/translations'
 const NAV_KEYS = [
   { key: 'about' as const, href: '#about' },
   { key: 'research' as const, href: '#research' },
+  { key: 'press' as const, href: '#press' },
   { key: 'publications' as const, href: '#publications' },
   { key: 'talks' as const, href: '#talks' },
   { key: 'contact' as const, href: '#contact' },
