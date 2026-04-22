@@ -236,6 +236,8 @@ export const T: Record<Lang, {
       'Neutron Stars': '中子星',
       'Blazar': '耀变体',
       'Optical Variability': '光学变化',
+      'He II': '氦II发射线',
+      'Little Red Dot': '小红点星系',
     },
     research: {
       sectionNum: '02 / 研究',
