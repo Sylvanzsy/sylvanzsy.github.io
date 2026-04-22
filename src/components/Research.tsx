@@ -18,6 +18,8 @@ const CARDS = [
     description:
       'Using N-body simulations with GIZMO and semi-analytical models to investigate PBHs\u2019 astrophysical impacts \u2014 from influencing first star formation and cosmic radiation background during reionization, to seeding supermassive black holes like Abell2744-QSO1 observed by JWST. Future observations with JWST, Roman, and SKA will be critical in distinguishing PBH-driven structure formation from standard \u039bCDM.',
     papers: [
+      { id: '2604.19075' },
+      { id: '2604.09177' },
       { id: '2512.14066' },
       { id: '2509.21575' },
       { id: '2508.21748' },

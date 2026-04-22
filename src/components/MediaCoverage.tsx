@@ -213,7 +213,7 @@ export default function MediaCoverage() {
           <div className="mt-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/25">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]" />
             <span className="text-xs font-semibold text-[var(--color-accent)]">
-              {totalCount} articles
+              {lang === 'zh' ? `${totalCount}篇报道` : `${totalCount} articles`}
             </span>
           </div>
         </motion.div>
