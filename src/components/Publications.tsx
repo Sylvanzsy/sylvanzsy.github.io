@@ -245,8 +245,8 @@ export default function Publications() {
           <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)]">{t.publications.title}</h2>
           <p className="mt-3 text-xs text-[var(--muted)]">
             {lang === 'zh'
-              ? 'h指数：11 · 引用总数：366 · 8篇第一作者论文 — 来源：'
-              : 'h-index: 11 · 366 total citations · 8 first-author papers — Source: '}
+              ? 'h指数：11 · 引用总数：416 · 8篇第一作者论文 — 来源：'
+              : 'h-index: 11 · 416 total citations · 8 first-author papers — Source: '}
             <a href="https://ui.adsabs.harvard.edu/public-libraries/rn8ayZ1WR1CJV6DeDhc2Ng" target="_blank" rel="noopener noreferrer"
               className="text-[var(--color-accent)] hover:underline underline-offset-2">
               NASA/ADS

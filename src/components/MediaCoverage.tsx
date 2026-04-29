@@ -141,6 +141,13 @@ function ArticleCard({ article, isDark, lang }: { article: Article; isDark: bool
             {t.media.readArticle}
           </span>
         </div>
+
+        {/* Related paper */}
+        {'relatedPaper' in article && article.relatedPaper && (
+          <p className="text-[10px] text-[var(--muted)]/60 mt-2 leading-snug">
+            📄 Related: {article.relatedPaper as string}
+          </p>
+        )}
       </div>
     </motion.a>
   )

@@ -143,6 +143,11 @@ export default function Hero() {
           </a>
         </motion.p>
 
+        {/* Scientific identity tagline */}
+        <motion.p variants={item} className="text-sm sm:text-base italic text-[var(--color-accent)]/70 max-w-2xl leading-relaxed mb-5">
+          {t.hero.tagline}
+        </motion.p>
+
         {/* Dual Fellowship announcement */}
         <motion.div variants={item} className="mb-8">
           <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent)]/[0.08] text-sm font-medium text-[var(--foreground)] shadow-[0_0_20px_rgba(76,201,240,0.12)]">

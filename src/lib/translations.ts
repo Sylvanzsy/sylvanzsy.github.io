@@ -1,7 +1,7 @@
 import type { Lang } from '@/context/LanguageContext'
 
 export const T: Record<Lang, {
-  nav: { about: string; research: string; press: string; publications: string; talks: string; contact: string; cv: string }
+  nav: { about: string; research: string; impact: string; press: string; publications: string; talks: string; contact: string; cv: string }
   about: {
     sectionNum: string; title: string; interests: string; education: string; awards: string
     lifeOutside: string; statusCandidate: string; statusGraduated: string; advisor: string
@@ -39,12 +39,25 @@ export const T: Record<Lang, {
   hero: {
     citaPrefix: string; citaFellow: string; citaAnd: string; citaPostdoc: string
     citaInstitute: string; citaSuffix: string
+    tagline: string
+  }
+  impact: {
+    pageTitle: string; pageSubtitle: string
+    statsTitle: string
+    awardsTitle: string
+    contribTitle: string; contribSubtitle: string
+    expandLabel: string; collapseLabel: string
+    impactLabel: string
+    journalLabel: string
+    card1Label: string; card2Label: string; card3Label: string
+    card4Label: string; card5Label: string; card6Label: string
   }
 }> = {
   en: {
     nav: {
       about: 'About',
       research: 'Research',
+      impact: 'Impact',
       press: 'Press',
       publications: 'Publications',
       talks: 'Talks',
@@ -144,12 +157,32 @@ export const T: Record<Lang, {
       citaPostdoc: 'Arts and Science Postdoctoral Fellow',
       citaInstitute: 'University of Toronto',
       citaSuffix: 'Fall 2026',
+      tagline: 'Connecting dark matter physics, primordial black holes, and JWST observations of the early Universe.',
+    },
+    impact: {
+      pageTitle: 'Academic Impact',
+      pageSubtitle: 'Research contributions, recognition, and influence on the field',
+      statsTitle: 'Key Numbers',
+      awardsTitle: 'Recognition & Appointments',
+      contribTitle: 'Original Contributions',
+      contribSubtitle: 'Core first-author works and their impact on the field',
+      expandLabel: 'Show Impact',
+      collapseLabel: 'Hide Impact',
+      impactLabel: 'Impact',
+      journalLabel: 'Journal',
+      card1Label: 'Publications',
+      card2Label: 'First-Author Papers',
+      card3Label: 'Total Citations',
+      card4Label: 'h-index',
+      card5Label: 'Media Features',
+      card6Label: 'Invited Talks',
     },
   },
   zh: {
     nav: {
       about: '关于我',
       research: '研究方向',
+      impact: '学术影响',
       press: '媒体',
       publications: '学术成果',
       talks: '学术报告',
@@ -295,6 +328,25 @@ export const T: Record<Lang, {
       citaPostdoc: '文理学院博士后研究员',
       citaInstitute: '多伦多大学',
       citaSuffix: '2026年秋',
+      tagline: '连接暗物质物理、原初黑洞与詹姆斯·韦伯空间望远镜对早期宇宙的观测。',
+    },
+    impact: {
+      pageTitle: '学术影响',
+      pageSubtitle: '研究贡献、学术认可与领域影响力',
+      statsTitle: '关键数字',
+      awardsTitle: '荣誉与认可',
+      contribTitle: '原创学术贡献',
+      contribSubtitle: '第一作者核心工作及其学术影响',
+      expandLabel: '展开影响',
+      collapseLabel: '收起影响',
+      impactLabel: '学术影响',
+      journalLabel: '期刊',
+      card1Label: '论文总数',
+      card2Label: '第一作者',
+      card3Label: '总引用数',
+      card4Label: 'h指数',
+      card5Label: '媒体报道',
+      card6Label: '邀请报告',
     },
   },
 }

@@ -10,6 +10,7 @@ import { T } from '@/lib/translations'
 const NAV_KEYS = [
   { key: 'about' as const, href: '#about' },
   { key: 'research' as const, href: '#research' },
+  { key: 'impact' as const, href: '/impact' },
   { key: 'press' as const, href: '#press' },
   { key: 'publications' as const, href: '#publications' },
   { key: 'talks' as const, href: '#talks' },
@@ -78,7 +79,7 @@ export default function Navbar() {
   const isDark = theme === 'dark'
   const pathname = usePathname()
   const isSubpage = pathname !== '/'
-  const navHref = (anchor: string) => isSubpage ? `/${anchor}` : anchor
+  const navHref = (anchor: string) => anchor.startsWith('/') ? anchor : (isSubpage ? `/${anchor}` : anchor)
 
   return (
     <motion.nav

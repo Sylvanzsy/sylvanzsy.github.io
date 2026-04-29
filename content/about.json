@@ -4,8 +4,8 @@
   "orcid": "0000-0003-1541-177X",
   "metrics": {
     "hIndex": 11,
-    "citations": 366,
-    "firstAuthorPapers": 7,
+    "citations": 416,
+    "firstAuthorPapers": 8,
     "source": "NASA/ADS"
   },
   "interests": [
@@ -75,6 +75,12 @@
       "year": "2019",
       "amount": "",
       "institution": "Colgate University"
+    },
+    {
+      "title": "Referee: Astronomical Journal (AJ), Physical Review D (PRD), Physical Review Letters (PRL)",
+      "year": "2025–present",
+      "amount": "",
+      "institution": "Peer Review Service"
     }
   ],
   "skills": {
