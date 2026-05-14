@@ -51,7 +51,9 @@ export const T: Record<Lang, {
     journalLabel: string
     card1Label: string; card2Label: string; card3Label: string
     card4Label: string; card5Label: string; card6Label: string
+    videoTitle: string
   }
+  videos: { sectionTitle: string; tagMedia: string; tagMyTalk: string; watchYouTube: string }
 }> = {
   en: {
     nav: {
@@ -176,6 +178,13 @@ export const T: Record<Lang, {
       card4Label: 'h-index',
       card5Label: 'Media Features',
       card6Label: 'Invited Talks',
+      videoTitle: 'Video Coverage & Talks',
+    },
+    videos: {
+      sectionTitle: '📺 Video Coverage & Talks',
+      tagMedia: '📰 Media Coverage',
+      tagMyTalk: '🎤 My Talk',
+      watchYouTube: 'Watch on YouTube →',
     },
   },
   zh: {
@@ -347,6 +356,13 @@ export const T: Record<Lang, {
       card4Label: 'h指数',
       card5Label: '媒体报道',
       card6Label: '邀请报告',
+      videoTitle: '视频报道与学术演讲',
+    },
+    videos: {
+      sectionTitle: '📺 视频报道与学术演讲',
+      tagMedia: '📰 媒体报道',
+      tagMyTalk: '🎤 本人演讲',
+      watchYouTube: '在YouTube观看 →',
     },
   },
 }

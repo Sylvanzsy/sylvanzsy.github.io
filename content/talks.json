@@ -93,19 +93,21 @@
     "id": "c8",
     "sortKey": "202508",
     "date": "Aug 2025",
-    "title": "Santa Cruz Galaxy Workshop (video)",
+    "title": "Santa Cruz Galaxy Workshop",
     "venue": "UC Santa Cruz",
     "location": "Santa Cruz, CA",
-    "type": "Contributed Talk"
+    "type": "Contributed Talk",
+    "videoUrl": "https://www.youtube.com/watch?v=64RdzkQA2Fs"
   },
   {
     "id": "c9",
     "sortKey": "202504",
     "date": "Apr 2025",
-    "title": "ITC Luncheon Talk (video)",
+    "title": "ITC Luncheon Talk",
     "venue": "Harvard University",
     "location": "Boston, MA",
-    "type": "Contributed Talk"
+    "type": "Contributed Talk",
+    "videoUrl": "https://www.youtube.com/watch?v=3tJxmKEe5Og"
   },
   {
     "id": "c10",

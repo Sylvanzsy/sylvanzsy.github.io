@@ -38,9 +38,22 @@ function TalkRow({ talk, index, dotClass, badge }: { talk: Talk; index: number; 
 
       {/* Content */}
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-semibold text-[var(--foreground)] leading-snug group-hover:text-[var(--color-accent)] transition-colors">
-          {talk.title}
-        </p>
+        <div className="flex items-center gap-2 flex-wrap">
+          <p className="text-sm font-semibold text-[var(--foreground)] leading-snug group-hover:text-[var(--color-accent)] transition-colors">
+            {talk.title}
+          </p>
+          {'videoUrl' in talk && talk.videoUrl && (
+            <a
+              href={talk.videoUrl as string}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="inline-flex items-center text-xs bg-teal-100 text-teal-700 dark:bg-teal-900 dark:text-teal-300 rounded-full px-2 py-0.5 hover:bg-teal-200 dark:hover:bg-teal-800 transition-colors shrink-0"
+            >
+              ▶ Video
+            </a>
+          )}
+        </div>
         <div className="flex items-center gap-1 mt-0.5 text-xs text-[var(--muted)]">
           <MapPinIcon />
           <span>{talk.venue} · {talk.location}</span>

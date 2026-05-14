@@ -5,6 +5,8 @@ import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLang } from '@/context/LanguageContext'
 import { T } from '@/lib/translations'
+import { VideoCard, type VideoItem } from '@/components/VideoCard'
+import videosData from '../../../content/videos.json'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
@@ -312,6 +314,7 @@ export default function ImpactPage() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-60px' }}
+          className="mb-20"
         >
           <h2 className="text-xl font-bold text-[var(--foreground)] mb-2 flex items-center gap-3">
             <span className="w-6 h-0.5 bg-[var(--color-accent)] rounded" />
@@ -322,6 +325,26 @@ export default function ImpactPage() {
             {CONTRIBUTIONS.map((c) => (
               <ContribCard key={c.arxiv} contrib={c} isZh={isZh} t={t} />
             ))}
+          </div>
+        </motion.section>
+
+        {/* ── Section D: Video Coverage & Talks ── */}
+        <motion.section
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-60px' }}
+        >
+          <h2 className="text-xl font-bold text-[var(--foreground)] mb-8 flex items-center gap-3">
+            <span className="w-6 h-0.5 bg-[var(--color-accent)] rounded" />
+            {t.impact.videoTitle}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {(videosData as VideoItem[])
+              .slice()
+              .sort((a, b) => (a.type === b.type ? 0 : a.type === 'media' ? -1 : 1))
+              .map((video) => (
+                <VideoCard key={video.id} video={video} />
+              ))}
           </div>
         </motion.section>
 

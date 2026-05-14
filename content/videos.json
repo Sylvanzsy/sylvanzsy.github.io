@@ -1,0 +1,54 @@
+[
+  {
+    "id": 1,
+    "type": "media",
+    "title": "2025's Biggest Breakthroughs in Physics",
+    "channel": "Quanta Magazine",
+    "url": "https://www.youtube.com/watch?v=CPoQkE9KaAY",
+    "thumbnail": "https://i.ytimg.com/vi/CPoQkE9KaAY/maxresdefault.jpg",
+    "views": "1.76M views",
+    "date": "Dec 2025",
+    "note_en": "Features 'Little Red Dots' — covers Juodžbalis et al. 2026, Accepted by Nature (co-authored with Saiyang Zhang)",
+    "note_zh": "专题报道'小红点'发现，涵盖张赛旸合著的 Juodžbalis et al. 2026（已被Nature接受）",
+    "relatedPaper": "Juodžbalis et al. 2026, Accepted by Nature [arXiv:2508.21748]"
+  },
+  {
+    "id": 2,
+    "type": "media",
+    "title": "JWST's Discovery of Primordial Black Holes",
+    "channel": "Astrum",
+    "url": "https://www.youtube.com/watch?v=v-5QemL9948",
+    "thumbnail": "https://i.ytimg.com/vi/v-5QemL9948/maxresdefault.jpg",
+    "views": "",
+    "date": "2024",
+    "note_en": "Popular science coverage of JWST primordial black hole discoveries and Little Red Dots",
+    "note_zh": "JWST发现原初黑洞与小红点的科普视频报道",
+    "relatedPaper": "Zhang et al. 2026, ApJL 1000, L19 [arXiv:2512.14066]"
+  },
+  {
+    "id": 3,
+    "type": "mytalk",
+    "title": "Primordial Black Holes & JWST — ITC Luncheon Talk",
+    "channel": "Harvard Center for Astrophysics",
+    "url": "https://www.youtube.com/watch?v=3tJxmKEe5Og",
+    "thumbnail": "https://i.ytimg.com/vi/3tJxmKEe5Og/maxresdefault.jpg",
+    "views": "",
+    "date": "Apr 2025",
+    "note_en": "Invited seminar at Harvard CfA — ITC Luncheon Talk series",
+    "note_zh": "2025年4月受邀在哈佛天体物理中心 ITC Luncheon Talk 系列作报告",
+    "relatedPaper": ""
+  },
+  {
+    "id": 4,
+    "type": "mytalk",
+    "title": "PBH Contributions — Santa Cruz Galaxy Workshop",
+    "channel": "UC Santa Cruz",
+    "url": "https://www.youtube.com/watch?v=64RdzkQA2Fs",
+    "thumbnail": "https://i.ytimg.com/vi/64RdzkQA2Fs/maxresdefault.jpg",
+    "views": "",
+    "date": "Aug 2025",
+    "note_en": "Contributed talk at Santa Cruz Galaxy Workshop 2025",
+    "note_zh": "2025年8月圣克鲁斯星系研讨会报告",
+    "relatedPaper": ""
+  }
+]

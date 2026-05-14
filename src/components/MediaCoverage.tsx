@@ -4,8 +4,10 @@ import { useState } from 'react'
 import { useTheme } from 'next-themes'
 import { motion } from 'framer-motion'
 import mediaData from '../../content/media.json'
+import videosData from '../../content/videos.json'
 import { useLang } from '@/context/LanguageContext'
 import { T } from '@/lib/translations'
+import { VideoCard, type VideoItem } from '@/components/VideoCard'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 
@@ -236,12 +238,33 @@ export default function MediaCoverage() {
         </div>
 
         {/* Dark Stars Group */}
-        <div>
+        <div className="mb-14">
           <GroupDivider label={t.media.groupDarkStars} color="purple" count={darkStarArticles.length} />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {darkStarArticles.map((article) => (
               <ArticleCard key={article.url} article={article} isDark={isDark} lang={lang} />
             ))}
+          </div>
+        </div>
+
+        {/* Video Section */}
+        <div className="border-t border-dashed border-teal-500/40 pt-14">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.5 }}
+            className="mb-8"
+          >
+            <h3 className="text-xl font-bold text-[var(--foreground)]">{t.videos.sectionTitle}</h3>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {(videosData as VideoItem[])
+              .slice()
+              .sort((a, b) => (a.type === b.type ? 0 : a.type === 'media' ? -1 : 1))
+              .map((video) => (
+                <VideoCard key={video.id} video={video} />
+              ))}
           </div>
         </div>
       </div>
