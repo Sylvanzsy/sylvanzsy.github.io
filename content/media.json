@@ -1,5 +1,73 @@
 [
   {
+    "date": "May 2026",
+    "outlet": "NASA",
+    "headline": "NASA's Webb Reveals Black Hole That Formed Before Its Galaxy",
+    "titleZh": "NASA官方报道：韦伯发现先于其星系形成的黑洞 (Abell2744-QSO1)",
+    "url": "https://science.nasa.gov/missions/webb/nasas-webb-reveals-black-hole-that-formed-before-its-galaxy/",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "official",
+    "relatedPaper": "Juodžbalis et al. 2026, Nature 653, 1017"
+  },
+  {
+    "date": "May 2026",
+    "outlet": "ESA",
+    "headline": "Webb Reveals Black Hole That Formed Before Its Galaxy",
+    "titleZh": "ESA官方报道：韦伯揭示先于其宿主星系形成的50亿太阳质量黑洞",
+    "url": "https://www.esa.int/Science_Exploration/Space_Science/Webb/Webb_reveals_black_hole_that_formed_before_its_galaxy",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "official",
+    "relatedPaper": "Juodžbalis et al. 2026, Nature 653, 1017"
+  },
+  {
+    "date": "May 2026",
+    "outlet": "NASA Webb",
+    "headline": "Little Red Dot Abell2744-QSO1 — NIRCam Image",
+    "titleZh": "NASA韦伯NIRCam图像：Abell2744-QSO1小红点",
+    "url": "https://science.nasa.gov/asset/webb/little-red-dot-abell2744-qso1-nircam-image/",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "official",
+    "isImageAsset": true,
+    "relatedPaper": "Juodžbalis et al. 2026, Nature 653, 1017"
+  },
+  {
+    "date": "May 2026",
+    "outlet": "NASA Webb",
+    "headline": "Sonification of Gas Velocity Around a Supermassive Black Hole",
+    "titleZh": "NASA韦伯：超大质量黑洞周围气体速度的声音化",
+    "url": "https://science.nasa.gov/asset/webb/little-red-dot-abell2744-qso1-sonification-of-gas-velocity-around-a-supermassive-black-hole-nircam-and-nirspec-ifu/",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "official",
+    "isAudioAsset": true,
+    "relatedPaper": "Juodžbalis et al. 2026, Nature 653, 1017"
+  },
+  {
+    "date": "Sep. 2025",
+    "outlet": "Quanta Magazine",
+    "headline": "A Single, 'Naked' Black Hole Rewrites the History of the Universe",
+    "titleZh": "孤立的'裸黑洞'改写宇宙早期历史——50亿太阳质量黑洞挑战现有理论",
+    "url": "https://www.quantamagazine.org/a-single-naked-black-hole-rewrites-the-history-of-the-universe-20250912/",
+    "topic": "PBH",
+    "featured": true,
+    "tier": "featured",
+    "relatedPaper": "Juodžbalis et al. 2026, Nature 653, 1017 [arXiv:2508.21748]"
+  },
+  {
+    "date": "Sep. 2025",
+    "outlet": "Scientific American",
+    "headline": "Gigantic, Ancient Black Hole Threatens to Upend Cosmic History",
+    "titleZh": "科学美国人：超大质量古老黑洞或颠覆宇宙学历史认知",
+    "url": "https://www.scientificamerican.com/article/gigantic-little-red-dot-threatens-to-upend-cosmic-history/",
+    "topic": "PBH",
+    "featured": true,
+    "tier": "featured",
+    "relatedPaper": "Juodžbalis et al. 2026, Nature 653, 1017 [arXiv:2508.21748]"
+  },
+  {
     "date": "Apr. 2026",
     "outlet": "Phys.org",
     "headline": "A monster black hole appeared first, then its galaxy began to grow around it",

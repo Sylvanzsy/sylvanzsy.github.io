@@ -18,7 +18,12 @@ const darkStarArticles = mediaData.filter((a) => a.topic === 'Dark Stars')
 
 // Outlet domain + brand color config
 const OUTLET_CONFIG: Record<string, { domain: string; color: string; darkColor: string }> = {
-  'The Guardian':           { domain: 'theguardian.com',          color: '#052962', darkColor: '#5B9BD5' },
+  'NASA':                   { domain: 'science.nasa.gov',          color: '#FC3D21', darkColor: '#FF6B5A' },
+  'NASA Webb':              { domain: 'science.nasa.gov',          color: '#FC3D21', darkColor: '#FF6B5A' },
+  'ESA':                    { domain: 'esa.int',                   color: '#003247', darkColor: '#5BA3D9' },
+  'Quanta Magazine':        { domain: 'quantamagazine.org',        color: '#FF6B35', darkColor: '#FF8C5A' },
+  'Scientific American':    { domain: 'scientificamerican.com',    color: '#000000', darkColor: '#E5E7EB' },
+  'The Guardian':           { domain: 'theguardian.com',           color: '#052962', darkColor: '#5B9BD5' },
   'New Scientist':          { domain: 'newscientist.com',          color: '#E8001C', darkColor: '#FF6666' },
   'Science Alert':          { domain: 'sciencealert.com',          color: '#1a73e8', darkColor: '#5BA3F5' },
   'Space.com':              { domain: 'space.com',                 color: '#111111', darkColor: '#E5E7EB' },
@@ -71,6 +76,9 @@ function ArticleCard({ article, isDark, lang }: { article: Article; isDark: bool
   const cfg = OUTLET_CONFIG[article.outlet]
   const outletColor = cfg ? (isDark ? cfg.darkColor : cfg.color) : (isDark ? '#9CA3AF' : '#374151')
   const domain = cfg?.domain ?? new URL(article.url).hostname.replace('www.', '')
+  const isOfficial = 'tier' in article && article.tier === 'official'
+  const isImage = 'isImageAsset' in article && article.isImageAsset
+  const isAudio = 'isAudioAsset' in article && article.isAudioAsset
 
   return (
     <motion.a
@@ -99,6 +107,15 @@ function ArticleCard({ article, isDark, lang }: { article: Article; isDark: bool
 
       {/* Card body */}
       <div className="flex flex-col gap-3.5 p-5 flex-1">
+        {/* Official Press Release badge */}
+        {isOfficial && (
+          <div className="flex items-center gap-1.5">
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-400/20 text-amber-600 dark:text-amber-400 border border-amber-400/30">
+              {lang === 'zh' ? '\u5B98\u65B9\u65B0\u95FB\u7A3F' : 'Official Press Release'}
+            </span>
+          </div>
+        )}
+
         {/* Header: logo + outlet name + star + date */}
         <div className="flex items-center gap-3">
           <OutletLogo outlet={article.outlet} domain={domain} />
@@ -110,6 +127,8 @@ function ArticleCard({ article, isDark, lang }: { article: Article; isDark: bool
               >
                 {article.outlet}
               </span>
+              {isImage && <span className="text-sm" title="Image asset">📷</span>}
+              {isAudio && <span className="text-sm" title="Audio asset">🔊</span>}
               {article.featured && <StarIcon />}
             </div>
           </div>

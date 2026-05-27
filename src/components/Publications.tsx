@@ -154,6 +154,18 @@ function PublicationEntry({ pub, index, t, lang }: { pub: Publication; index: nu
               <ArxivIcon /> arXiv:{pub.arxiv}
             </a>
           )}
+          {'natureUrl' in pub && pub.natureUrl && (
+            <a href={pub.natureUrl as string} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-md border border-[var(--card-border)] text-[var(--muted)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)]/40 transition-all">
+              <ExternalLinkIcon /> Nature
+            </a>
+          )}
+          {'videoUrl' in pub && pub.videoUrl && (
+            <a href={pub.videoUrl as string} target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-md border border-[var(--card-border)] text-[var(--muted)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)]/40 transition-all">
+              <ExternalLinkIcon /> video
+            </a>
+          )}
           {pub.arxiv && (
             <a href={`https://ui.adsabs.harvard.edu/abs/arXiv:${pub.arxiv}`} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-md border border-[var(--card-border)] text-[var(--muted)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)]/40 transition-all">

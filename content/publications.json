@@ -1,19 +1,21 @@
 [
   {
-    "id": "pre3",
+    "id": "pub0",
     "authors": ["Ignas Juodžbalis", "et al.", "Saiyang Zhang", "et al."],
-    "title": "A direct black hole mass measurement in a Little Red Dot at Epoch of Reionization",
-    "journal": "Accepted by Nature",
-    "shortJournal": "Preprint",
-    "volume": "",
-    "pages": "",
+    "title": "A direct black-hole mass measurement in a little red dot at high redshift",
+    "journal": "Nature",
+    "shortJournal": "Nature",
+    "volume": "653",
+    "pages": "1017-1021",
     "year": 2026,
     "arxiv": "2508.21748",
-    "doi": "",
+    "doi": "10.1038/s41586-026-10579-4",
+    "natureUrl": "https://www.nature.com/articles/s41586-026-10579-4",
+    "videoUrl": "https://www.youtube.com/watch?v=CPoQkE9KaAY",
     "category": "Early Universe",
     "tags": ["Little Red Dot", "Reionization", "JWST"],
     "firstAuthor": false,
-    "isPreprint": true
+    "isPreprint": false
   },
   {
     "id": "pub3",
@@ -128,11 +130,11 @@
     "isPreprint": true
   },
   {
-    "id": "pre2",
+    "id": "pub13",
     "authors": ["Hannah Übler", "et al.", "Saiyang Zhang", "et al."],
-    "title": "BlackTHUNDER: three massive black holes in a z~5 galaxy",
-    "journal": "Submitted to Astronomy & Astrophysics",
-    "shortJournal": "Preprint",
+    "title": "BlackTHUNDER: evidence for three massive black holes in a z~5 galaxy",
+    "journal": "Accepted by Astronomy & Astrophysics",
+    "shortJournal": "A&A",
     "volume": "",
     "pages": "",
     "year": 2025,
@@ -141,7 +143,7 @@
     "category": "Early Universe",
     "tags": ["Black Holes", "High-z", "JWST"],
     "firstAuthor": false,
-    "isPreprint": true
+    "isPreprint": false
   },
   {
     "id": "pub5",
