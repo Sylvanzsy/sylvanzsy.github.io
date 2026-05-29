@@ -46,6 +46,83 @@
     "relatedPaper": "Juodžbalis et al. 2026, Nature 653, 1017"
   },
   {
+    "date": "May 2026",
+    "outlet": "University of Cambridge",
+    "headline": "Astronomers Spot Black Hole That Formed Before Its Galaxy",
+    "titleZh": "剑桥大学官方报道：天文学家发现先于其星系形成的黑洞",
+    "url": "https://www.cam.ac.uk/research/news/astronomers-spot-black-hole-that-formed-before-its-galaxy",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "official",
+    "relatedPaper": "Juodžbalis et al. 2026, Nature 653, 1017"
+  },
+  {
+    "date": "May 2026",
+    "outlet": "Scientific American",
+    "headline": "Gigantic 'Little Red Dot' Threatens to Upend Cosmic History",
+    "titleZh": "科学美国人：巨型'小红点'或将颠覆宇宙学历史认知",
+    "url": "https://www.scientificamerican.com/article/gigantic-little-red-dot-threatens-to-upend-cosmic-history/",
+    "topic": "PBH",
+    "featured": true,
+    "tier": "featured",
+    "relatedPaper": "Juodžbalis et al. 2026, Nature 653, 1017"
+  },
+  {
+    "date": "Dec. 2025",
+    "outlet": "Quanta Magazine",
+    "headline": "The Year in Physics",
+    "titleZh": "Quanta杂志2025年度物理学回顾——'裸黑洞'发现入选年度突破",
+    "url": "https://www.quantamagazine.org/the-year-in-physics-20251217/",
+    "topic": "PBH",
+    "featured": true,
+    "tier": "featured",
+    "relatedPaper": "Juodžbalis et al. 2026, Nature 653, 1017"
+  },
+  {
+    "date": "May 2026",
+    "outlet": "Phys.org",
+    "headline": "Webb Reveals Black Hole That Formed Before Its Galaxy",
+    "titleZh": "Phys.org：韦伯揭示先于其宿主星系形成的黑洞",
+    "url": "https://phys.org/news/2026-05-webb-reveals-black-hole-galaxy.html",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "standard",
+    "relatedPaper": "Juodžbalis et al. 2026, Nature 653, 1017"
+  },
+  {
+    "date": "May 2026",
+    "outlet": "Live Science",
+    "headline": "Astronomers Weighed a 'Little Red Dot' Discovered by JWST — and Found a 'Naked' Black Hole Inside",
+    "titleZh": "Live Science：韦伯发现'裸黑洞'，质量超越宿主星系所有恒星",
+    "url": "https://www.livescience.com/space/black-holes/astronomers-weighed-a-little-red-dot-discovered-by-the-james-webb-telescope-and-found-a-naked-black-hole-inside",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "standard",
+    "relatedPaper": "Juodžbalis et al. 2026, Nature 653, 1017"
+  },
+  {
+    "date": "May 2026",
+    "outlet": "Engadget",
+    "headline": "James Webb Telescope Spots Supermassive Black Hole That Formed Before Its Galaxy",
+    "titleZh": "Engadget：韦伯望远镜发现先于其宿主星系形成的超大质量黑洞",
+    "url": "https://www.engadget.com/2182295/james-webb-telescope-spots-supermassive-black-hole-that-formed-before-its-galaxy/",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "standard",
+    "relatedPaper": "Juodžbalis et al. 2026, Nature 653, 1017"
+  },
+  {
+    "date": "May 2026",
+    "outlet": "Sci.News",
+    "headline": "Webb Spots Supermassive Black Hole Older Than Its Home Galaxy",
+    "titleZh": "Sci.News：韦伯发现比宿主星系更古老的超大质量黑洞",
+    "url": "https://www.sci.news/astronomy/webb-supermassive-black-hole-early-universe-14803.html",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "standard",
+    "relatedPaper": "Juodžbalis et al. 2026, Nature 653, 1017"
+  },
+  {
     "date": "Sep. 2025",
     "outlet": "Quanta Magazine",
     "headline": "A Single, 'Naked' Black Hole Rewrites the History of the Universe",

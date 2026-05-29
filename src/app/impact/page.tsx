@@ -22,7 +22,7 @@ const STATS = [
   { value: '8',  keyEN: 'card2Label', sourceEN: '', sourceZH: '' },
   { value: '416', keyEN: 'card3Label', sourceEN: '', sourceZH: '' },
   { value: '11', keyEN: 'card4Label', sourceEN: 'Source: NASA/ADS', sourceZH: '来源：NASA/ADS' },
-  { value: '15', keyEN: 'card5Label', sourceEN: '', sourceZH: '' },
+  { value: '22', keyEN: 'card5Label', sourceEN: '', sourceZH: '' },
   { value: '3',  keyEN: 'card6Label', sourceEN: '', sourceZH: '' },
 ] as const
 
