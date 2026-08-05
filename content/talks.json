@@ -27,6 +27,24 @@
     "type": "Invited Talk"
   },
   {
+    "id": "c0a",
+    "sortKey": "202607",
+    "date": "Jul 2026",
+    "title": "York+UofT Galaxy Journal Club",
+    "venue": "University of Toronto",
+    "location": "Toronto, ON, Canada",
+    "type": "Contributed Talk"
+  },
+  {
+    "id": "c0b",
+    "sortKey": "202606",
+    "date": "Jun 2026",
+    "title": "Group Meeting Talk",
+    "venue": "Yale University",
+    "location": "New Haven, CT",
+    "type": "Contributed Talk"
+  },
+  {
     "id": "c1",
     "sortKey": "202512",
     "date": "Dec 2025",

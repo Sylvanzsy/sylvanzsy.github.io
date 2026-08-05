@@ -105,7 +105,7 @@ export default function Hero() {
         <motion.div variants={item}>
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10 text-[var(--color-accent)] text-xs font-medium tracking-widest uppercase mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse" />
-            {isZh ? '博士候选人 · UT Austin · 预计2026年8月' : 'PhD Candidate · UT Austin · Expected Aug 2026'}
+            {isZh ? '博士（2026年8月）· UT Austin' : 'Recent PhD (Aug 2026) · UT Austin'}
           </span>
         </motion.div>
 
@@ -124,9 +124,9 @@ export default function Hero() {
         {/* Title */}
         <motion.p variants={item} className="text-base sm:text-lg text-[var(--muted)] max-w-xl leading-relaxed mb-1">
           {isZh ? (
-            <>理论与计算天体物理学博士候选人</>
+            <>理论与计算天体物理学者</>
           ) : (
-            <>PhD Candidate in{' '}<span className="text-[var(--foreground)] font-medium">Theoretical &amp; Computational Astrophysics</span></>
+            <><span className="text-[var(--foreground)] font-medium">Theoretical &amp; Computational Astrophysicist</span></>
           )}
         </motion.p>
 

@@ -159,7 +159,7 @@ export const T: Record<Lang, {
       citaPostdoc: 'Arts and Science Postdoctoral Fellow',
       citaInstitute: 'University of Toronto',
       citaSuffix: 'Fall 2026',
-      tagline: 'Connecting dark matter physics, primordial black holes, and JWST observations of the early Universe.',
+      tagline: 'Theoretical & computational astrophysicist. Incoming CITA & Arts and Science Postdoctoral Fellow at the University of Toronto (Fall 2026).',
     },
     impact: {
       pageTitle: 'Academic Impact',
@@ -209,7 +209,7 @@ export const T: Record<Lang, {
       statusGraduated: '已毕业',
       advisor: '导师：',
       // UPDATE 3: Natural Chinese bio
-      bioZh: '我在北京长大，从小对自然科学和宇宙的奥秘充满好奇。高中毕业后赴美，在柯盖德大学（Colgate University）攻读天文/物理与应用数学，本科毕业后进入德克萨斯大学奥斯汀分校（UT Austin）攻读博士，师从 Volker Bromm 教授，主攻理论与计算天体物理。\n\n目前我是六年级博士候选人，研究方向集中在暗物质与早期宇宙的交叉领域——包括原初黑洞（PBH）、弱相互作用大质量粒子（WIMP）、温暗物质（WDM）和自相互作用暗物质（SIDM）等不同暗物质候选者对早期宇宙天体（第三族星、超大质量黑洞等）的天体物理效应，结合理论建模与大规模数值模拟开展研究。\n\n近年来，我也对机器学习与科学发现的结合愈发感兴趣，特别是将大语言模型（LLM）和基于模拟的推断方法应用于暗物质探测与宇宙学参数估计。\n\n业余时间，我喜欢滑雪、登山、踢球和打网球。目前已登顶科罗拉多四座海拔超过14000英尺的山峰，计划继续挑战更多。',
+      bioZh: '我在北京长大，从小对自然科学和宇宙的奥秘充满好奇。高中毕业后赴美，在柯盖德大学（Colgate University）攻读天文/物理与应用数学，本科毕业后进入德克萨斯大学奥斯汀分校（UT Austin）攻读博士，师从 Volker Bromm 教授，主攻理论与计算天体物理。\n\n我已于 2026 年 8 月完成博士学业（德克萨斯大学奥斯汀分校），研究方向集中在暗物质与早期宇宙的交叉领域——包括原初黑洞（PBH）、弱相互作用大质量粒子（WIMP）、温暗物质（WDM）和自相互作用暗物质（SIDM）等不同暗物质候选者对早期宇宙天体（第三族星、超大质量黑洞等）的天体物理效应，结合理论建模与大规模数值模拟开展研究。\n\n近年来，我也对机器学习与科学发现的结合愈发感兴趣，特别是将大语言模型（LLM）和基于模拟的推断方法应用于暗物质探测与宇宙学参数估计。\n\n业余时间，我喜欢滑雪、登山、踢球和打网球。目前已登顶科罗拉多四座海拔超过14000英尺的山峰，计划继续挑战更多。',
       // UPDATE 1: Research interest tag translations
       interestLabels: {
         'Dark Matter (PBHs, WIMPs, SIDM)': '暗物质（原初黑洞、WIMP、SIDM）',
@@ -337,7 +337,7 @@ export const T: Record<Lang, {
       citaPostdoc: '文理学院博士后研究员',
       citaInstitute: '多伦多大学',
       citaSuffix: '2026年秋',
-      tagline: '连接暗物质物理、原初黑洞与詹姆斯·韦伯空间望远镜对早期宇宙的观测。',
+      tagline: '理论与计算天体物理学者。即将就任多伦多大学 CITA 暨文理学院双博士后研究员（2026 年秋）。',
     },
     impact: {
       pageTitle: '学术影响',

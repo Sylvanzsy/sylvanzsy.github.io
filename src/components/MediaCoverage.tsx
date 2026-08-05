@@ -35,6 +35,7 @@ const OUTLET_CONFIG: Record<string, { domain: string; color: string; darkColor: 
   'Live Science':           { domain: 'livescience.com',          color: '#FF7E00', darkColor: '#FFA94D' },
   'Engadget':               { domain: 'engadget.com',             color: '#00ABD1', darkColor: '#4DD0E8' },
   'Sci.News':               { domain: 'sci.news',                 color: '#1F4E79', darkColor: '#5B9BD5' },
+  'AAS Nova':               { domain: 'aasnova.org',              color: '#1F5A8C', darkColor: '#4D8EC4' },
 }
 
 // Tier helpers — prominence ordering: official > featured > standard
