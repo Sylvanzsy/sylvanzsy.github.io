@@ -36,6 +36,11 @@ const OUTLET_CONFIG: Record<string, { domain: string; color: string; darkColor: 
   'Engadget':               { domain: 'engadget.com',             color: '#00ABD1', darkColor: '#4DD0E8' },
   'Sci.News':               { domain: 'sci.news',                 color: '#1F4E79', darkColor: '#5B9BD5' },
   'AAS Nova':               { domain: 'aasnova.org',              color: '#1F5A8C', darkColor: '#4D8EC4' },
+  'The New York Times':     { domain: 'nytimes.com',              color: '#000000', darkColor: '#E5E7EB' },
+  'Max Planck Institute':   { domain: 'mpg.de',                   color: '#006C66', darkColor: '#3DB8B2' },
+  'Universe Today':         { domain: 'universetoday.com',        color: '#005B99', darkColor: '#4DA3E8' },
+  'TechTimes':              { domain: 'techtimes.com',            color: '#E84A5F', darkColor: '#FF7A8A' },
+  'ZME Science':            { domain: 'zmescience.com',           color: '#2E7D32', darkColor: '#66BB6A' },
 }
 
 // Tier helpers — prominence ordering: official > featured > standard

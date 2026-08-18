@@ -20,8 +20,8 @@ const fadeUp = {
 const STATS = [
   { value: '20', keyEN: 'card1Label', sourceEN: '', sourceZH: '' },
   { value: '8',  keyEN: 'card2Label', sourceEN: '', sourceZH: '' },
-  { value: '416', keyEN: 'card3Label', sourceEN: '', sourceZH: '' },
-  { value: '11', keyEN: 'card4Label', sourceEN: 'Source: NASA/ADS', sourceZH: '来源：NASA/ADS' },
+  { value: '475', keyEN: 'card3Label', sourceEN: '', sourceZH: '' },
+  { value: '12', keyEN: 'card4Label', sourceEN: 'Source: NASA/ADS', sourceZH: '来源：NASA/ADS' },
   { value: '30', keyEN: 'card5Label', sourceEN: '', sourceZH: '' },
   { value: '3',  keyEN: 'card6Label', sourceEN: '', sourceZH: '' },
 ] as const
