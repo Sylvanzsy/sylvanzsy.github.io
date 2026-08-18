@@ -22,7 +22,7 @@ const STATS = [
   { value: '8',  keyEN: 'card2Label', sourceEN: '', sourceZH: '' },
   { value: '416', keyEN: 'card3Label', sourceEN: '', sourceZH: '' },
   { value: '11', keyEN: 'card4Label', sourceEN: 'Source: NASA/ADS', sourceZH: '来源：NASA/ADS' },
-  { value: '23', keyEN: 'card5Label', sourceEN: '', sourceZH: '' },
+  { value: '30', keyEN: 'card5Label', sourceEN: '', sourceZH: '' },
   { value: '3',  keyEN: 'card6Label', sourceEN: '', sourceZH: '' },
 ] as const
 
@@ -54,6 +54,13 @@ type Award = {
 }
 
 const AWARDS: Award[] = [
+  {
+    titleEN: 'PhD Dissertation Defended, University of Texas at Austin',
+    titleZH: '博士论文答辩通过，德克萨斯大学奥斯汀分校',
+    subtitleEN: 'Degree conferral expected Fall 2026',
+    subtitleZH: '正式学位授予预计于 2026 年秋',
+    year: 'Aug 2026',
+  },
   {
     titleEN: 'CITA Postdoctoral Fellowship, Canadian Institute for Theoretical Astrophysics, University of Toronto',
     titleZH: 'CITA博士后研究员，加拿大理论天体物理研究所，多伦多大学',

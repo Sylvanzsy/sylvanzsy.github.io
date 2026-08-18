@@ -1,5 +1,82 @@
 [
   {
+    "date": "Aug 2026",
+    "outlet": "The New York Times",
+    "headline": "In a Galaxy Far, Far Away, Two Black Holes on the Cusp of Merging",
+    "titleZh": "《纽约时报》：韦伯望远镜发现三黑洞系统，其中两个即将合并",
+    "url": "https://www.nytimes.com/2026/08/12/science/space/james-webb-telescope-black-holes-merging.html",
+    "topic": "PBH",
+    "featured": true,
+    "tier": "featured",
+    "relatedPaper": "Übler et al. 2026, A&A (arXiv:2509.21575) — BlackTHUNDER"
+  },
+  {
+    "date": "Aug 2026",
+    "outlet": "Max Planck Institute",
+    "headline": "Three supermassive black holes discovered in a single galaxy for the first time",
+    "titleZh": "马克斯·普朗克研究所官方报道：首次在单一星系中发现三个超大质量黑洞",
+    "url": "https://www.mpg.de/26904239/three-black-holes-discovered-in-a-young-galaxy",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "official",
+    "relatedPaper": "Übler et al. 2026, A&A — BlackTHUNDER"
+  },
+  {
+    "date": "Aug 2026",
+    "outlet": "Universe Today",
+    "headline": "Another First for the JWST: It Detects Three Supermassive Black Holes in the Same Galaxy",
+    "titleZh": "Universe Today：韦伯望远镜首次在同一星系中探测到三个超大质量黑洞",
+    "url": "https://www.universetoday.com/articles/another-first-for-the-jwst-it-detects-three-supermassive-black-holes-in-the-same-galaxy",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "standard",
+    "relatedPaper": "Übler et al. 2026, A&A — BlackTHUNDER"
+  },
+  {
+    "date": "Aug 2026",
+    "outlet": "TechTimes",
+    "headline": "Webb Spots First Triple Black Hole System: Merger Is an 82-Percent LISA Target",
+    "titleZh": "TechTimes：韦伯发现首个三黑洞系统，其合并有 82% 概率被 LISA 探测",
+    "url": "https://www.techtimes.com/articles/324383/20260813/webb-spots-first-triple-black-hole-system-merger-82-percent-lisa-target.htm",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "standard",
+    "relatedPaper": "Übler et al. 2026, A&A — BlackTHUNDER"
+  },
+  {
+    "date": "Aug 2026",
+    "outlet": "Daily Galaxy",
+    "headline": "Astronomers Find Three Black Holes Hiding Inside a Galaxy 12.5 Billion Light-Years Away",
+    "titleZh": "Daily Galaxy：天文学家在 125 亿光年外的星系中发现三个黑洞",
+    "url": "https://dailygalaxy.com/2026/08/astronomers-find-three-black-holes-hiding/",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "standard",
+    "relatedPaper": "Übler et al. 2026, A&A — BlackTHUNDER"
+  },
+  {
+    "date": "Aug 2026",
+    "outlet": "ZME Science",
+    "headline": "Astronomers Baffled by 3 Feeding Supermassive Black Holes Packed Into Early Galaxy When the Universe Was Barely a Billion Years Old",
+    "titleZh": "ZME Science：宇宙年龄仅约十亿年时早期星系中就有三个超大质量黑洞",
+    "url": "https://www.zmescience.com/space/3-black-holes-found-first-time/",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "standard",
+    "relatedPaper": "Übler et al. 2026, A&A — BlackTHUNDER"
+  },
+  {
+    "date": "Aug 2026",
+    "outlet": "Phys.org",
+    "headline": "Three supermassive black holes discovered in a single galaxy for the first time",
+    "titleZh": "Phys.org：首次在单一星系中发现三个超大质量黑洞",
+    "url": "https://phys.org/news/2026-08-supermassive-black-holes-galaxy.html",
+    "topic": "PBH",
+    "featured": false,
+    "tier": "standard",
+    "relatedPaper": "Übler et al. 2026, A&A — BlackTHUNDER"
+  },
+  {
     "date": "Jul 2026",
     "outlet": "AAS Nova",
     "headline": "First-Generation Stars Provide Better Fit than a Black Hole for Early-Universe Gas Clump",

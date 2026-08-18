@@ -93,6 +93,13 @@ function StatusBadge({ status, label }: { status: string; label: string }) {
       </span>
     )
   }
+  if (status === 'Dissertation Defended') {
+    return (
+      <span className="ml-auto text-xs px-2 py-0.5 rounded-full shrink-0 bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200 font-medium">
+        {label}
+      </span>
+    )
+  }
   return (
     <span className="ml-auto text-xs px-2 py-0.5 rounded-full shrink-0 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 font-medium">
       {label}
@@ -226,7 +233,7 @@ export default function About() {
               </h3>
               <div className="flex flex-col gap-4">
                 {aboutData.education.map((edu) => {
-                  const statusLabel = edu.status === 'Candidate' ? t.about.statusCandidate : t.about.statusGraduated
+                  const statusLabel = edu.status === 'Candidate' ? t.about.statusCandidate : edu.status === 'Dissertation Defended' ? t.about.statusDefended : t.about.statusGraduated
                   const displayDegree = t.about.degreeLabels[edu.degree] || edu.degree
                   const displayDepartment = t.about.departmentLabels[edu.department] || edu.department
                   return (
@@ -253,6 +260,9 @@ export default function About() {
                         )}
                         {edu.thesis && (
                           <p className="text-xs text-[var(--muted)] italic mt-0.5 truncate">&ldquo;{edu.thesis}&rdquo;</p>
+                        )}
+                        {(edu as {note?: string}).note && (
+                          <p className="text-xs text-amber-600 dark:text-amber-400 mt-0.5">{(edu as {note?: string}).note}</p>
                         )}
                       </div>
                       <StatusBadge status={edu.status} label={statusLabel} />

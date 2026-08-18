@@ -1,5 +1,5 @@
 {
-  "bio": "Growing up in Beijing, I developed a deep appreciation for science and the mysteries of the universe. After completing high school, I moved to the US to pursue undergraduate studies at Colgate University in Astronomy/Physics and Applied Mathematics.\n\nI recently completed my PhD (August 2026) at the University of Texas at Austin, advised by Volker Bromm, specializing in theoretical and computational astrophysics. My research focuses on dark matter, the early universe, and cosmological evolution — studying dark matter candidates like Primordial Black Holes (PBHs), Weakly Interacting Massive Particles (WIMPs), Warm Dark Matter (WDM), and Self-interacting Dark Matter (SIDM), and their astrophysical effects on early universe objects like Population III stars and Supermassive Black Holes.\n\nBeyond traditional astrophysics, I am increasingly interested in the intersection of machine learning and scientific discovery — particularly in applying large language models (LLMs) and simulation-based inference to accelerate research in cosmology and dark matter detection, as well as studying AI systems as a new domain of scientific inquiry.\n\nBeyond my academic pursuits, I have a profound love for nature and sports. I enjoy downhill skiing, mountain hiking, football (⚽), and tennis. I have conquered four 14ers in Colorado, and there are more to go.",
+  "bio": "Growing up in Beijing, I developed a deep appreciation for science and the mysteries of the universe. After completing high school, I moved to the US to pursue undergraduate studies at Colgate University in Astronomy/Physics and Applied Mathematics.\n\nI recently defended my PhD dissertation (August 2026) at the University of Texas at Austin, advised by Volker Bromm, specializing in theoretical and computational astrophysics. My research focuses on dark matter, the early universe, and cosmological evolution — studying dark matter candidates like Primordial Black Holes (PBHs), Weakly Interacting Massive Particles (WIMPs), Warm Dark Matter (WDM), and Self-interacting Dark Matter (SIDM), and their astrophysical effects on early universe objects like Population III stars and Supermassive Black Holes.\n\nBeyond traditional astrophysics, I am increasingly interested in the intersection of machine learning and scientific discovery — particularly in applying large language models (LLMs) and simulation-based inference to accelerate research in cosmology and dark matter detection, as well as studying AI systems as a new domain of scientific inquiry.\n\nBeyond my academic pursuits, I have a profound love for nature and sports. I enjoy downhill skiing, mountain hiking, football (⚽), and tennis. I have conquered four 14ers in Colorado, and there are more to go.",
   "photo": "/photos/avatar.jpg",
   "orcid": "0000-0003-1541-177X",
   "metrics": {
@@ -23,8 +23,9 @@
       "department": "Cosmic Frontier Center · Weinberg Institute",
       "advisor": "Volker Bromm",
       "thesis": "Imprints of Primordial Black Holes over Cosmic History",
-      "year": "Aug 2020 – Aug 2026",
-      "status": "Graduated"
+      "note": "Dissertation defended Aug 2026",
+      "year": "Aug 2020 – Fall 2026 (expected)",
+      "status": "Dissertation Defended"
     },
     {
       "degree": "M.A. in Physics",
