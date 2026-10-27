@@ -10,8 +10,8 @@
   },
   {
     "id": "i2",
-    "sortKey": "202407",
-    "date": "Jul 2024",
+    "sortKey": "202410",
+    "date": "Oct 2024",
     "title": "Seventeenth Marcel Grossmann Meeting",
     "venue": "University of Bologna",
     "location": "Bologna, Italy",
@@ -24,6 +24,70 @@
     "title": "Physics Seminar",
     "venue": "Colgate University",
     "location": "Hamilton, NY",
+    "type": "Invited Talk"
+  },
+  {
+    "id": "i4",
+    "sortKey": "202509",
+    "date": "Sep 2025",
+    "title": "Astronomy Seminar",
+    "venue": "Columbia University",
+    "location": "New York, NY",
+    "type": "Invited Talk"
+  },
+  {
+    "id": "i5",
+    "sortKey": "202509",
+    "date": "Sep 2025",
+    "title": "Thunch Talk",
+    "venue": "Princeton University",
+    "location": "Princeton, NJ",
+    "type": "Invited Talk"
+  },
+  {
+    "id": "i6",
+    "sortKey": "202509",
+    "date": "Sep 2025",
+    "title": "PACMAN Seminar",
+    "venue": "Flatiron Institute",
+    "location": "New York, NY",
+    "type": "Invited Talk"
+  },
+  {
+    "id": "i7",
+    "sortKey": "202509",
+    "date": "Sep 2025",
+    "title": "Galaxy Lunch",
+    "venue": "Yale University",
+    "location": "New Haven, CT",
+    "type": "Invited Talk"
+  },
+  {
+    "id": "i8",
+    "sortKey": "202504",
+    "date": "Apr 2025",
+    "title": "ITC Luncheon Talk",
+    "venue": "Harvard Center for Astrophysics",
+    "location": "Boston, MA",
+    "type": "Invited Talk",
+    "videoUrl": "https://www.youtube.com/watch?v=3tJxmKEe5Og"
+  },
+  {
+    "id": "i9",
+    "sortKey": "202504",
+    "date": "Apr 2025",
+    "title": "MAT Seminar",
+    "venue": "MIT Kavli Institute",
+    "location": "Boston, MA",
+    "type": "Invited Talk"
+  },
+  {
+    "id": "i10",
+    "sortKey": "202410",
+    "date": "Oct 2024",
+    "title": "Astrophysics Seminar",
+    "venue": "University of California Riverside",
+    "location": "Riverside, CA",
     "type": "Invited Talk"
   },
   {
@@ -76,44 +140,8 @@
     "sortKey": "202510",
     "date": "Oct 2025",
     "title": "Extragalactic Discussion Group",
-    "venue": "University of Hawaiʻi",
+    "venue": "University of Hawaiʻi at Mānoa",
     "location": "Mānoa, HI",
-    "type": "Contributed Talk"
-  },
-  {
-    "id": "c4",
-    "sortKey": "202509",
-    "date": "Sep 2025",
-    "title": "Thunch Talk",
-    "venue": "Princeton University",
-    "location": "Princeton, NJ",
-    "type": "Contributed Talk"
-  },
-  {
-    "id": "c5",
-    "sortKey": "202509",
-    "date": "Sep 2025",
-    "title": "Galaxy Lunch",
-    "venue": "Yale University",
-    "location": "New Haven, CT",
-    "type": "Contributed Talk"
-  },
-  {
-    "id": "c6",
-    "sortKey": "202509",
-    "date": "Sep 2025",
-    "title": "PACMAN Seminar",
-    "venue": "Flatiron Institute",
-    "location": "New York City, NY",
-    "type": "Contributed Talk"
-  },
-  {
-    "id": "c7",
-    "sortKey": "202509",
-    "date": "Sep 2025",
-    "title": "Astrophysics Seminar",
-    "venue": "Columbia University",
-    "location": "New York City, NY",
     "type": "Contributed Talk"
   },
   {
@@ -125,25 +153,6 @@
     "location": "Santa Cruz, CA",
     "type": "Contributed Talk",
     "videoUrl": "https://www.youtube.com/watch?v=64RdzkQA2Fs"
-  },
-  {
-    "id": "c9",
-    "sortKey": "202504",
-    "date": "Apr 2025",
-    "title": "ITC Luncheon Talk",
-    "venue": "Harvard University",
-    "location": "Boston, MA",
-    "type": "Contributed Talk",
-    "videoUrl": "https://www.youtube.com/watch?v=3tJxmKEe5Og"
-  },
-  {
-    "id": "c10",
-    "sortKey": "202504",
-    "date": "Apr 2025",
-    "title": "MAT Seminar",
-    "venue": "MIT Kavli Institute",
-    "location": "Boston, MA",
-    "type": "Contributed Talk"
   },
   {
     "id": "c11",
@@ -173,12 +182,12 @@
     "type": "Contributed Talk"
   },
   {
-    "id": "c14",
-    "sortKey": "202410",
-    "date": "Oct 2024",
-    "title": "Astrophysics Seminar",
-    "venue": "UC Riverside",
-    "location": "Riverside, CA",
+    "id": "c17",
+    "sortKey": "202407",
+    "date": "Jul 2024",
+    "title": "International Workshop on the Identification of Dark Matter",
+    "venue": "IDM 2024",
+    "location": "Italy",
     "type": "Contributed Talk"
   },
   {
@@ -231,7 +240,7 @@
     "sortKey": "202312",
     "date": "Dec 2023",
     "title": "Texas Symposium on Relativistic Astrophysics",
-    "venue": "Shanghai Jiao Tong University",
+    "venue": "Tsung-Dao Lee Institute, SJTU",
     "location": "Shanghai, China",
     "type": "Poster"
   },
