@@ -7,10 +7,18 @@ import { T } from '@/lib/translations'
 
 const PAPERS = [
   {
+    authors: 'Zhang, S., Jeon, J., Liu, B., Bromm, V., & Natarajan, P.',
+    year: 2026,
+    title: 'The Road to Normalcy: Environment-Driven Evolutionary Pathways for Primordial Black Holes',
+    journal: 'Submitted to ApJ',
+    arxiv: '2608.23498',
+    firstAuthor: true,
+  },
+  {
     authors: 'Jeon, J., Jeong, T., Zhang, S., & Bromm, V.',
     year: 2026,
     title: 'What is Powering the Enigmatic He II Emitter Hebe: The First Stars or Black Holes',
-    journal: 'Submitted to ApJ',
+    journal: 'ApJ, 1006, 27',
     arxiv: '2604.19075',
     firstAuthor: false,
   },
@@ -18,7 +26,7 @@ const PAPERS = [
     authors: 'Ivey, L., ..., Zhang, S., et al.',
     year: 2026,
     title: 'The Cliff: A Metal-Poor Little Red Dot Hosting an Overmassive Black Hole at z=3.55',
-    journal: 'Submitted to MNRAS',
+    journal: 'MNRAS, 550, stag1220 (accepted)',
     arxiv: '2604.09177',
     firstAuthor: false,
   },
@@ -34,7 +42,7 @@ const PAPERS = [
     authors: 'Übler, H., ..., Zhang, S., et al.',
     year: 2025,
     title: 'BlackTHUNDER: evidence for three massive black holes in a z~5 galaxy',
-    journal: 'Accepted by A&A',
+    journal: 'A&A, 712, A80',
     arxiv: '2509.21575',
     firstAuthor: false,
   },

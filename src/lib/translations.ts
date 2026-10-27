@@ -160,7 +160,7 @@ export const T: Record<Lang, {
       citaPostdoc: 'Arts and Science Postdoctoral Fellow',
       citaInstitute: 'University of Toronto',
       citaSuffix: 'Fall 2026',
-      tagline: 'Theoretical & computational astrophysicist. Incoming CITA & Arts and Science Postdoctoral Fellow at the University of Toronto (Fall 2026).',
+      tagline: 'Theoretical & computational astrophysicist. Recent PhD from UT Austin (defended Aug 2026). Working on primordial black holes, early universe cosmology, and JWST observations.',
     },
     impact: {
       pageTitle: 'Academic Impact',
@@ -339,7 +339,7 @@ export const T: Record<Lang, {
       citaPostdoc: '文理学院博士后研究员',
       citaInstitute: '多伦多大学',
       citaSuffix: '2026年秋',
-      tagline: '理论与计算天体物理学者。即将就任多伦多大学 CITA 暨文理学院双博士后研究员（2026 年秋）。',
+      tagline: '理论与计算天体物理学者。德州大学奥斯汀分校博士（2026 年 8 月通过论文答辩）。研究方向：原初黑洞、早期宇宙与 JWST 观测。',
     },
     impact: {
       pageTitle: '学术影响',

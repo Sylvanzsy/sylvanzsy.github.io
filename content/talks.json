@@ -27,6 +27,15 @@
     "type": "Invited Talk"
   },
   {
+    "id": "c0c",
+    "sortKey": "202609",
+    "date": "Sep 2026",
+    "title": "Extragalactic Theory Meeting",
+    "venue": "Canadian Institute for Theoretical Astrophysics (CITA)",
+    "location": "University of Toronto, Toronto, ON, Canada",
+    "type": "Contributed Talk"
+  },
+  {
     "id": "c0a",
     "sortKey": "202607",
     "date": "Jul 2026",

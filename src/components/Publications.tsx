@@ -257,8 +257,8 @@ export default function Publications() {
           <h2 className="text-3xl sm:text-4xl font-bold text-[var(--foreground)]">{t.publications.title}</h2>
           <p className="mt-3 text-xs text-[var(--muted)]">
             {lang === 'zh'
-              ? 'h指数：12 · 引用总数：475 · 8篇第一作者论文 — 来源：'
-              : 'h-index: 12 · 475 total citations · 8 first-author papers — Source: '}
+              ? 'h指数：14 · 引用总数：635 · 9篇第一作者论文 — 来源：'
+              : 'h-index: 14 · 635 total citations · 9 first-author papers — Source: '}
             <a href="https://ui.adsabs.harvard.edu/public-libraries/rn8ayZ1WR1CJV6DeDhc2Ng" target="_blank" rel="noopener noreferrer"
               className="text-[var(--color-accent)] hover:underline underline-offset-2">
               NASA/ADS
@@ -369,6 +369,43 @@ export default function Publications() {
             </svg>
           </a>
         </motion.div>
+
+        {/* Software Releases */}
+        <div className="mt-10">
+          <div className="w-full flex items-center justify-between px-5 py-4 rounded-xl border border-[var(--card-border)] bg-[var(--card)]">
+            <div className="flex items-center gap-3">
+              <span className="text-xs font-semibold tracking-[0.15em] uppercase text-[var(--foreground)]">
+                {lang === 'zh' ? '开源软件' : 'Software Releases'}
+              </span>
+              <span className="text-xs px-2 py-0.5 rounded-full bg-[var(--color-accent)]/10 text-[var(--color-accent)] font-mono border border-[var(--color-accent)]/20">1</span>
+            </div>
+          </div>
+          <div className="mt-2 rounded-xl border border-[var(--card-border)] bg-[var(--card)] overflow-hidden">
+            <div className="flex items-start gap-4 px-5 py-4 border-b border-[var(--card-border)] last:border-0">
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-semibold text-[var(--foreground)] leading-snug">
+                  PHANTOM
+                </p>
+                <p className="text-xs text-[var(--muted)] mt-0.5">
+                  {lang === 'zh'
+                    ? '开源原初黑洞模拟工具包'
+                    : 'Open-source Primordial Black Hole simulation suite for cosmological N-body/hydrodynamical codes'}
+                </p>
+                <p className="text-xs text-[var(--muted)] mt-0.5">Zhang, S. (2026)</p>
+                <div className="flex gap-3 flex-wrap mt-2">
+                  <a
+                    href="https://doi.org/10.5281/zenodo.17025634"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-md border border-[var(--card-border)] text-[var(--muted)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)]/40 transition-all"
+                  >
+                    <ExternalLinkIcon /> doi:10.5281/zenodo.17025634
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Astronomer's Telegrams collapsible */}
         <div className="mt-10">

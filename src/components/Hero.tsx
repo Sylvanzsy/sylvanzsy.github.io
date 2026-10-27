@@ -105,7 +105,9 @@ export default function Hero() {
         <motion.div variants={item}>
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10 text-[var(--color-accent)] text-xs font-medium tracking-widest uppercase mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)] animate-pulse" />
-            {isZh ? '博士（2026年8月）· UT Austin' : 'Recent PhD (Aug 2026) · UT Austin'}
+            {isZh
+              ? '物理学博士（2026年8月答辩，12月毕业）· UT Austin'
+              : 'PhD in Physics (defended Aug 2026, degree conferral Dec 2026) · UT Austin'}
           </span>
         </motion.div>
 
@@ -147,31 +149,6 @@ export default function Hero() {
         <motion.p variants={item} className="text-sm sm:text-base italic text-[var(--color-accent)]/70 max-w-2xl leading-relaxed mb-5">
           {t.hero.tagline}
         </motion.p>
-
-        {/* Dual Fellowship announcement */}
-        <motion.div variants={item} className="mb-8">
-          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[var(--color-accent)]/40 bg-[var(--color-accent)]/[0.08] text-sm font-medium text-[var(--foreground)] shadow-[0_0_20px_rgba(76,201,240,0.12)]">
-            <span className="text-base">🎉</span>
-            <span>
-              {t.hero.citaPrefix}{' '}
-              <a href="https://www.cita.utoronto.ca/" target="_blank" rel="noopener noreferrer"
-                className="text-[var(--color-accent)] font-semibold hover:underline underline-offset-2">
-                {t.hero.citaFellow}
-              </a>
-              {' '}{t.hero.citaAnd}{' '}
-              <a href="https://www.artsci.utoronto.ca/" target="_blank" rel="noopener noreferrer"
-                className="text-[var(--color-accent)] font-semibold hover:underline underline-offset-2">
-                {t.hero.citaPostdoc}
-              </a>
-              {' '}·{' '}
-              <a href="https://www.utoronto.ca/" target="_blank" rel="noopener noreferrer"
-                className="hover:underline underline-offset-2">
-                {t.hero.citaInstitute}
-              </a>
-              {' '}· {t.hero.citaSuffix}
-            </span>
-          </span>
-        </motion.div>
 
         {/* Profile links */}
         <motion.div variants={item} className="flex flex-col items-center gap-3 w-full max-w-lg">

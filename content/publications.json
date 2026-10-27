@@ -1,5 +1,21 @@
 [
   {
+    "id": "pre9",
+    "authors": ["Saiyang Zhang", "Jeon, J.", "Liu, B.", "Bromm, V.", "Natarajan, P."],
+    "title": "The Road to Normalcy: Environment-Driven Evolutionary Pathways for Primordial Black Holes",
+    "journal": "Submitted to The Astrophysical Journal",
+    "shortJournal": "ApJ",
+    "volume": "",
+    "pages": "",
+    "year": 2026,
+    "arxiv": "2608.23498",
+    "doi": "",
+    "category": "Dark Matter",
+    "tags": ["PBH", "Early Universe"],
+    "firstAuthor": true,
+    "isPreprint": true
+  },
+  {
     "id": "pub0",
     "authors": ["Ignas Juodžbalis", "et al.", "Saiyang Zhang", "et al."],
     "title": "A direct black-hole mass measurement in a little red dot at high redshift",
@@ -71,7 +87,7 @@
     "title": "The Cliff: A Metal-Poor Little Red Dot Hosting an Overmassive Black Hole at z = 3.55",
     "journal": "Monthly Notices of the Royal Astronomical Society",
     "shortJournal": "MNRAS",
-    "volume": "",
+    "volume": "550",
     "pages": "stag1220",
     "year": 2026,
     "arxiv": "2604.09177",
